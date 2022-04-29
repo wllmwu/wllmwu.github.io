@@ -1,0 +1,24 @@
+name: Deploy to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Add subtree
+        run: git subtree add --prefix out ${{ github.repositoryUrl }} gh-pages --squash
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+      - name: Build and deploy
+        run: |
+          npm install
+          npm run deploy
