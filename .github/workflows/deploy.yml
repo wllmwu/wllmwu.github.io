@@ -24,6 +24,8 @@ jobs:
         with:
           cache: npm
       - name: Build and deploy
+        env:
+          HUSKY: 0
         run: |
           npm install
           npm run deploy
