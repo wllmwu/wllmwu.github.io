@@ -12,8 +12,12 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
       - name: Add subtree
-        run: git subtree add --prefix out ${{ github.repositoryUrl }} gh-pages --squash
+        env:
+          REPOSITORY_URL: ${{ github.repositoryUrl }}
+        run: git subtree add --prefix out "$REPOSITORY_URL" gh-pages --squash
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
