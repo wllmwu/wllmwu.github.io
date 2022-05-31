@@ -1,11 +1,51 @@
 import React from "react";
-// import Link from "next/link";
+import Link from "next/link";
 
-function NavigationBar(): JSX.Element {
+interface NavBarNode {
+  slug: string;
+  title: string;
+  children?: NavBarNode[];
+}
+
+const navBarLinks: NavBarNode[] = [
+  {
+    slug: "about",
+    title: "About",
+  },
+  {
+    slug: "apps",
+    title: "Apps",
+  },
+  {
+    slug: "projects",
+    title: "Projects",
+  },
+  {
+    slug: "resources",
+    title: "Resources",
+  },
+  {
+    slug: "contact",
+    title: "Contact",
+  },
+];
+
+function NavigationBar() {
   return (
-    <div>
-      <p>This is the navigation bar, trust me</p>
-    </div>
+    <nav>
+      <Link href="/">
+        <a>William Wu</a>
+      </Link>
+      <menu>
+        {navBarLinks.map((node) => (
+          <li key={node.slug}>
+            <Link href={`/${node.slug}`}>
+              <a>{node.title.toUpperCase()}</a>
+            </Link>
+          </li>
+        ))}
+      </menu>
+    </nav>
   );
 }
 
