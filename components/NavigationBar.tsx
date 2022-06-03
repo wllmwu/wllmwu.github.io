@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import styles from "../styles/NavigationBar.module.css";
 
 interface NavBarNode {
   slug: string;
@@ -32,15 +33,15 @@ const navBarLinks: NavBarNode[] = [
 
 function NavigationBar() {
   return (
-    <nav>
+    <nav className={styles.navigationBar}>
       <Link href="/">
-        <a>William Wu</a>
+        <a className={styles.homeLink}>William Wu</a>
       </Link>
-      <menu>
+      <menu className={styles.navigationLinkList}>
         {navBarLinks.map((node) => (
-          <li key={node.slug}>
+          <li key={node.slug} className={styles.navigationLinkItem}>
             <Link href={`/${node.slug}`}>
-              <a>{node.title.toUpperCase()}</a>
+              <a className={styles.navigationLink}>{node.title.toUpperCase()}</a>
             </Link>
           </li>
         ))}
