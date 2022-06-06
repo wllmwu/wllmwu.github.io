@@ -40,5 +40,9 @@
 }
 
 .navigationLink:hover {
-  color: var(--text-secondary-color);
+  color: var(--accent-color);
+}
+
+.navigationLinkCurrent {
+  color: var(--accent-color);
 }
