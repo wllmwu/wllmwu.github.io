@@ -19,7 +19,7 @@
   white-space: nowrap;
 }
 
-.navigationLinkList {
+.topLinkList {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -28,21 +28,21 @@
   margin-bottom: 0.5rem;
 }
 
-.navigationLinkItem {
+.topLinkItem {
   list-style-type: none;
 }
 
-.navigationLink {
+.topLink {
   font-family: var(--heading-typeface);
   font-size: 1.5rem;
   color: var(--text-primary-color);
   padding: 2rem;
 }
 
-.navigationLink:hover {
+.topLink:hover {
   color: var(--accent-color);
 }
 
-.navigationLinkCurrent {
+.topLinkCurrent {
   color: var(--accent-color);
 }

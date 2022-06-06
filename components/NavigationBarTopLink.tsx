@@ -11,13 +11,11 @@ interface NavigationBarTopLinkProps {
 function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) {
   const [isHovered, setHovered] = useState(false);
   const isInCurrentPath = node.slug === currentPath[0];
-  const aStyle = isInCurrentPath
-    ? `${styles.navigationLink} ${styles.navigationLinkCurrent}`
-    : styles.navigationLink;
+  const aStyle = isInCurrentPath ? `${styles.topLink} ${styles.topLinkCurrent}` : styles.topLink;
 
   return (
     <li
-      className={styles.navigationLinkItem}
+      className={styles.topLinkItem}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

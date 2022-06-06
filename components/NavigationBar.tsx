@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { trimSlashes } from "../utils/urls";
+import { trimSlashes } from "../utils";
 import NavigationBarTopLink from "./NavigationBarTopLink";
 import styles from "../styles/NavigationBar.module.css";
 
@@ -54,7 +54,7 @@ function NavigationBar() {
       <Link href="/">
         <a className={styles.homeLink}>William Wu</a>
       </Link>
-      <menu className={styles.navigationLinkList}>
+      <menu className={styles.topLinkList}>
         {navBarNodes.map((node) => (
           <NavigationBarTopLink key={node.slug} node={node} currentPath={pathComponents} />
         ))}
