@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { NavBarNode } from "./NavigationBar";
+import NavigationBarSubmenu from "./NavigationBarSubmenu";
 import styles from "../styles/NavigationBar.module.css";
 
 interface NavigationBarTopLinkProps {
@@ -22,6 +23,14 @@ function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) 
       <Link href={`/${node.slug}`}>
         <a className={aStyle}>{node.title.toUpperCase()}</a>
       </Link>
+      {node.children && (
+        <NavigationBarSubmenu
+          nodes={node.children}
+          linkPrefix={`/${node.slug}`}
+          currentPath={currentPath}
+          visible={isHovered}
+        />
+      )}
     </li>
   );
 }
