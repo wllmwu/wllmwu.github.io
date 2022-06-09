@@ -1,0 +1,31 @@
+name: Deploy to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+      - name: Add subtree
+        run: |
+          git config --global user.email "dev.wwu@gmail.com"
+          git config --global user.name "William Wu"
+          git subtree add --prefix out "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" gh-pages --squash
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+      - name: Build and deploy
+        env:
+          HUSKY: 0
+        run: |
+          npm install
+          npm run deploy
