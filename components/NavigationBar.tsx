@@ -56,13 +56,15 @@ const navBarNodes: NavBarNode[] = [
   },
 ];
 
+export const navbarID = "navbar";
+
 function NavigationBar() {
   const router = useRouter();
   const currentPath = trimSlashes(router.pathname);
   const pathComponents = currentPath.split("/");
 
   return (
-    <nav className={styles.navigationBar}>
+    <nav id={navbarID} className={styles.navigationBar}>
       <Link href="/">
         <a className={styles.homeLink}>William Wu</a>
       </Link>

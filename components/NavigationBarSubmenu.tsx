@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { combineClasses } from "../utils";
-import { NavBarNode } from "./NavigationBar";
+import { navbarID, NavBarNode } from "./NavigationBar";
 import NavigationBarSublink from "./NavigationBarSublink";
 import styles from "../styles/NavigationBar.module.css";
 
@@ -31,20 +31,30 @@ function NavigationBarSubmenu({
   const [positionClass, setPositionClass] = useState<SubmenuPosition>(position);
   const submenuID = `navbar-submenu:${linkPrefix}`;
 
-  useEffect(() => {
-    if (typeof window === "undefined" || typeof document === "undefined") {
+  const handleResize = useCallback(() => {
+    if (typeof document === "undefined") {
       return;
     }
-    const viewportWidth = window.innerWidth;
-    const element = document.getElementById(submenuID);
-    if (element === null) {
+    setPositionClass(position);
+    const navbarElement = document.getElementById(navbarID);
+    const submenuElement = document.getElementById(submenuID);
+    if (navbarElement === null || submenuElement === null) {
       return;
     }
-    const rect = element.getBoundingClientRect();
-    if (rect.x + rect.width > viewportWidth) {
+    const navbarRect = navbarElement.getBoundingClientRect();
+    const submenuRect = submenuElement.getBoundingClientRect();
+    if (submenuRect.x + submenuRect.width > navbarRect.width) {
       setPositionClass(position === "below" ? "below-left" : "beside-left");
     }
   }, [position, submenuID]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <menu
