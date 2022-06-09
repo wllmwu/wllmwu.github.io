@@ -33,6 +33,18 @@ const navBarNodes: NavBarNode[] = [
   {
     slug: "projects",
     title: "Projects",
+    children: [
+      {
+        slug: "tse",
+        title: "Triton Software Engineering",
+        children: [
+          { slug: "fsd-distribution", title: "FSD Distribution Web App" },
+          { slug: "ycw-green-home", title: "YCW Green Home" },
+          { slug: "tse-moneta", title: "TSE Moneta" },
+          { slug: "lak-goods-transport", title: "Laktaa Goods Transport" },
+        ],
+      },
+    ],
   },
   {
     slug: "resources",

@@ -5,25 +5,27 @@ import { NavBarNode } from "./NavigationBar";
 import NavigationBarSubmenu from "./NavigationBarSubmenu";
 import styles from "../styles/NavigationBar.module.css";
 
-interface NavigationBarTopLinkProps {
+interface NavigationBarSublinkProps {
   node: NavBarNode;
+  linkPrefix: string;
   currentPath: string[];
 }
 
-function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) {
+function NavigationBarSublink({ node, linkPrefix, currentPath }: NavigationBarSublinkProps) {
   const [isHovered, setHovered] = useState(false);
-  const isInCurrentPath = node.slug === currentPath[0];
-  const destination = `/${node.slug}`;
+  const isInCurrentPath = currentPath.length > 0 && node.slug === currentPath[0];
+  const destination = `${linkPrefix}/${node.slug}`;
 
   return (
     <li
-      className={styles.topLinkItem}
+      className={styles.sublinkItem}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <Link href={destination}>
-        <a className={combineClasses(styles.topLink, isInCurrentPath ? styles.topLinkCurrent : "")}>
-          {node.title.toUpperCase()}
+        <a className={combineClasses(styles.sublink, isInCurrentPath ? styles.sublinkCurrent : "")}>
+          {node.title}
+          {node.children && <span className={styles.sublinkArrow}>{"\u276f"}</span>}
         </a>
       </Link>
       {node.children && (
@@ -32,11 +34,11 @@ function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) 
           linkPrefix={destination}
           currentPath={isInCurrentPath ? currentPath.slice(1) : []}
           visible={isHovered}
-          position="below"
+          position="beside"
         />
       )}
     </li>
   );
 }
 
-export default NavigationBarTopLink;
+export default NavigationBarSublink;

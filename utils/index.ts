@@ -5,3 +5,8 @@ export const trimSlashes: (path: string) => string = (path) => {
   }
   return "";
 };
+
+export const combineClasses: (...classNames: string[]) => string = (...classNames) => {
+  classNames = classNames.filter((value) => value);
+  return classNames.join(" ");
+};
