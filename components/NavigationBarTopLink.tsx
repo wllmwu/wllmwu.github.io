@@ -20,6 +20,7 @@ function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) 
       className={styles.topLinkItem}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onMouseUp={() => setHovered(false)}
     >
       <Link href={destination}>
         <a className={combineClasses(styles.topLink, isInCurrentPath ? styles.topLinkCurrent : "")}>

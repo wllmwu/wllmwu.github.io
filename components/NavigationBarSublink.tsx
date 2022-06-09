@@ -21,6 +21,7 @@ function NavigationBarSublink({ node, linkPrefix, currentPath }: NavigationBarSu
       className={styles.sublinkItem}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onMouseUp={() => setHovered(false)}
     >
       <Link href={destination}>
         <a className={combineClasses(styles.sublink, isInCurrentPath ? styles.sublinkCurrent : "")}>
