@@ -1,4 +1,4 @@
-import nextMDXConfig from "@next/mdx";
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,7 +9,7 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-const withMDX = nextMDXConfig({
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
