@@ -11,7 +11,7 @@
 }
 
 .container {
-  background-color: var(--transparent);
+  background-color: transparent;
   width: 90%;
   max-width: 1280px;
   margin-left: auto;
