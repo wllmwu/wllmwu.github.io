@@ -1,5 +1,4 @@
 .navigationBar {
-  --highlight-color: #e0e0e0;
   background-color: var(--content-background-color);
   position: sticky;
   top: 0;
@@ -60,8 +59,7 @@
   position: absolute;
   z-index: 1000;
   width: max-content;
-  border: solid #000;
-  border-width: 1px;
+  border: 1px solid #000;
   border-radius: var(--submenu-border-radius);
 }
 

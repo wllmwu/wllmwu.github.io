@@ -4,6 +4,7 @@
   --text-primary-color: #000;
   --text-secondary-color: #888;
   --accent-color: #00b0f0;
+  --highlight-color: #e0e0e0;
   --shadow-color: #00000030;
   --transparent: #0000;
   --body-typeface: "Noto Serif", Georgia, "Times New Roman", Times, serif;
@@ -13,6 +14,7 @@
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
+  --weight-semibold: 600;
   --weight-bold: 700;
 }
 
@@ -25,6 +27,47 @@
 html,
 body {
   font-family: var(--body-typeface);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-typeface);
+  font-weight: var(--weight-semibold);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--highlight-color);
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--highlight-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.75rem;
 }
 
 a {
