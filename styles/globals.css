@@ -1,8 +1,11 @@
 :root {
-  --background-color: #fff;
+  --background-color: #f0f0f0;
+  --content-background-color: #fff;
   --text-primary-color: #000;
   --text-secondary-color: #888;
   --accent-color: #00b0f0;
+  --shadow-color: #00000030;
+  --transparent: #0000;
   --body-typeface: "Noto Serif", Georgia, "Times New Roman", Times, serif;
   --heading-typeface: "Barlow Semi Condensed", Helvetica, Arial, sans-serif;
   --heading-secondary-typeface: "Barlow", Helvetica, Arial, sans-serif;

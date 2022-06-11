@@ -1,12 +1,12 @@
 .navigationBar {
   --highlight-color: #e0e0e0;
-  background-color: var(--background-color);
+  background-color: var(--content-background-color);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   min-width: max-content;
-  box-shadow: 0px 2px 2px 2px #00000030;
+  box-shadow: 0px 2px 2px 2px var(--shadow-color);
   padding: 24px 32px;
   display: flex;
   flex-direction: row;
@@ -53,15 +53,16 @@
 }
 
 .navigationBarSubmenu {
+  --submenu-border-radius: 4px;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
+  background-color: var(--content-background-color);
   position: absolute;
   z-index: 1000;
   width: max-content;
   border: solid #000;
   border-width: 1px;
-  border-radius: 4px;
+  border-radius: var(--submenu-border-radius);
 }
 
 .navigationBarSubmenu.below {
@@ -100,13 +101,13 @@
 }
 
 .sublinkItem:first-child > .sublink {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: var(--submenu-border-radius);
+  border-top-right-radius: var(--submenu-border-radius);
 }
 
 .sublinkItem:last-child > .sublink {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: var(--submenu-border-radius);
+  border-bottom-right-radius: var(--submenu-border-radius);
 }
 
 .sublink:hover {
