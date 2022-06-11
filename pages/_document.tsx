@@ -11,7 +11,7 @@ function MyDocument() {
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=optional"
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=optional"
           rel="stylesheet"
         />
         <link
