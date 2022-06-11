@@ -70,6 +70,75 @@ h6 {
   font-size: 0.75rem;
 }
 
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: var(--weight-bold);
+}
+
 a {
+  color: var(--accent-color);
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  font-family: var(--code-typeface);
+  background-color: var(--highlight-color);
+  padding: 0.0625em 0.25em;
+  border-radius: 0.25em;
+}
+
+pre code {
+  background-color: unset;
+  padding: unset;
+  border-radius: unset;
+}
+
+ol,
+ul {
+  padding-inline-start: 2.5em;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol,
+ol ul ol,
+ul ol ol,
+ul ul ol {
+  list-style-type: lower-roman;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+}
+
+ul ul ul,
+ul ol ul,
+ol ul ul,
+ol ol ul {
+  list-style-type: square;
 }
