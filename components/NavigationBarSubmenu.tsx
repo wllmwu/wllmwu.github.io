@@ -28,6 +28,7 @@ function NavigationBarSubmenu({
   visible,
   position,
 }: NavigationBarSubmenuProps) {
+  const [originalRect, setOriginalRect] = useState<DOMRect>();
   const [positionClass, setPositionClass] = useState<SubmenuPosition>(position);
   const submenuID = `navbar-submenu:${linkPrefix}`;
 
@@ -35,7 +36,6 @@ function NavigationBarSubmenu({
     if (typeof document === "undefined") {
       return;
     }
-    setPositionClass(position);
     const navbarElement = document.getElementById(navbarID);
     const submenuElement = document.getElementById(submenuID);
     if (navbarElement === null || submenuElement === null) {
@@ -43,16 +43,21 @@ function NavigationBarSubmenu({
     }
     const navbarRect = navbarElement.getBoundingClientRect();
     const submenuRect = submenuElement.getBoundingClientRect();
-    if (submenuRect.x + submenuRect.width > navbarRect.width) {
+    if (!originalRect) {
+      setOriginalRect(submenuRect);
+    } else if (originalRect.x + originalRect.width > navbarRect.width) {
       setPositionClass(position === "below" ? "below-left" : "beside-left");
+    } else {
+      setPositionClass(position);
     }
-  }, [position, submenuID]);
+  }, [originalRect, position, submenuID]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
     window.addEventListener("resize", handleResize);
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, [handleResize]);
 

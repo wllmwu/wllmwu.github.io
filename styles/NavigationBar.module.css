@@ -1,12 +1,11 @@
 .navigationBar {
-  --highlight-color: #e0e0e0;
-  background-color: var(--background-color);
+  background-color: var(--content-background-color);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   min-width: max-content;
-  box-shadow: 0px 2px 2px 2px #00000030;
+  box-shadow: 0px 2px 2px 2px var(--shadow-color);
   padding: 24px 32px;
   display: flex;
   flex-direction: row;
@@ -53,15 +52,15 @@
 }
 
 .navigationBarSubmenu {
+  --submenu-border-radius: 4px;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
+  background-color: var(--content-background-color);
   position: absolute;
   z-index: 1000;
   width: max-content;
-  border: solid var(--highlight-color);
-  border-width: 2px;
-  border-radius: 4px;
+  border: 1px solid #000;
+  border-radius: var(--submenu-border-radius);
 }
 
 .navigationBarSubmenu.below {
@@ -75,7 +74,7 @@
 }
 
 .navigationBarSubmenu.beside {
-  top: -2px;
+  top: -1px;
   left: calc(100% - 1rem);
 }
 
@@ -91,12 +90,22 @@
 .sublink {
   font-family: var(--heading-secondary-typeface);
   font-size: 1.25rem;
-  font-weight: var(--weight-light);
+  font-weight: var(--weight-normal);
   color: var(--text-primary-color);
   display: flex;
   width: 100%;
   padding: 0.75rem 1rem;
   padding-right: 1.5rem;
+}
+
+.sublinkItem:first-child > .sublink {
+  border-top-left-radius: var(--submenu-border-radius);
+  border-top-right-radius: var(--submenu-border-radius);
+}
+
+.sublinkItem:last-child > .sublink {
+  border-bottom-left-radius: var(--submenu-border-radius);
+  border-bottom-right-radius: var(--submenu-border-radius);
 }
 
 .sublink:hover {

@@ -7,11 +7,11 @@ function MyDocument() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=optional"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=optional"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=optional"
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=optional"
           rel="stylesheet"
         />
         <link
