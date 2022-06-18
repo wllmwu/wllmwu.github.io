@@ -7,7 +7,6 @@ interface PageProps {
 }
 
 function Page({ metadata, children }: PageProps) {
-  console.log(JSON.stringify(metadata));
   return <div className={styles.content}>{children}</div>;
 }
 
