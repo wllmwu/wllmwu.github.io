@@ -1,4 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import mdxConfig from "@next/mdx";
+import remarkFrontmatter from "remark-frontmatter";
+import frontmatterCompiler from "./utils/frontmatterCompiler.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,12 +11,12 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-const withMDX = require("@next/mdx")({
+const withMDX = mdxConfig({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkFrontmatter, frontmatterCompiler],
     rehypePlugins: [],
   },
 });
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

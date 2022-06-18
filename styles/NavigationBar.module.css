@@ -45,6 +45,7 @@
 
 .topLink:hover {
   background-color: var(--highlight-color);
+  text-decoration: none;
 }
 
 .topLinkCurrent {
@@ -110,6 +111,7 @@
 
 .sublink:hover {
   background-color: var(--highlight-color);
+  text-decoration: none;
 }
 
 .sublinkCurrent {

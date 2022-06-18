@@ -1,3 +1,11 @@
+---
+title: Hello
+---
+
+```
+import { Page } from "../components";
+```
+
 # Home
 
 Does MDX processing work?
@@ -52,3 +60,7 @@ Lorem `ipsum` dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit am
 Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
 
 Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+
+```
+export default ({ children }) => <Page metadata={{ test: "asdf" }}>{children}</Page>;
+```

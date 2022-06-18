@@ -1,6 +1,7 @@
 {
-  "name": "personal-site",
+  "name": "william-wu-site",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,7 +17,8 @@
     "@next/mdx": "^12.1.6",
     "next": "^12.1.5",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "remark-frontmatter": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.26",
