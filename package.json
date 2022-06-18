@@ -1,6 +1,7 @@
 {
-  "name": "personal-site",
+  "name": "william-wu-site",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,6 +15,7 @@
   "dependencies": {
     "@mdx-js/loader": "^2.1.1",
     "@next/mdx": "^12.1.6",
+    "@types/js-yaml": "^4.0.5",
     "next": "^12.1.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
