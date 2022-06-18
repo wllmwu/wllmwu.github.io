@@ -158,6 +158,7 @@ const frontmatterCompiler = () => (root) => {
   }
   const node = root.children[0];
   if (node.type !== "yaml") {
+    root.children.push(pageComponentImportNode, pageDefaultExportNode({}));
     return;
   }
   const data = load(node.value);
