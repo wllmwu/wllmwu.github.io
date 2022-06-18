@@ -1,0 +1,58 @@
+.card {
+  flex: 0;
+  width: 24rem;
+  margin: 1rem;
+  border: 1px solid var(--text-secondary-color);
+  border-radius: 1rem;
+}
+
+.card:hover {
+  border-color: var(--accent-color);
+}
+
+.card:hover * {
+  color: var(--accent-color);
+}
+
+.cardLink:hover {
+  text-decoration: none;
+}
+
+.cardInnerWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cardContent {
+  flex: 1;
+  padding: 1.5rem 1.75rem;
+  padding-right: 0;
+}
+
+.cardTitle {
+  font-family: var(--heading-typeface);
+  font-size: 1.5rem;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary-color);
+  text-transform: uppercase;
+}
+
+.cardSubtitle {
+  margin-top: 0.75em;
+  font-family: var(--body-typeface);
+  font-size: 1rem;
+  font-weight: var(--weight-normal);
+  color: var(--text-primary-color);
+}
+
+.cardArrow {
+  margin: 0 1rem;
+  margin-right: 1.5rem;
+  font-family: var(--heading-typeface);
+  font-size: 1.5rem;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary-color);
+}
