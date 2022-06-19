@@ -2,6 +2,8 @@
 title: Hello
 ---
 
+import { Card, CardList } from "../components";
+
 # Home
 
 Does MDX processing work?
@@ -14,9 +16,15 @@ Does MDX processing work?
       - Fourth level
     - Let's see
 
-import { Card } from "../components";
-
-<Card title="Test card" subtitle="This is a card which links to the home page" linkPath="/" />
+<CardList numColumns={2}>
+  <Card title="Test card" subtitle="This is a card which links to home" linkPath="/" />
+  <Card
+    title="Test card number two"
+    subtitle="This is a card which links to the about page, how cool is that"
+    linkPath="/about"
+  />
+  <Card title="Card 3" linkPath="/" />
+</CardList>
 
 ## Heading
 

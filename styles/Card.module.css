@@ -1,7 +1,32 @@
+.cardListContainer {
+  --card-width: 24rem;
+  --card-column-gap: 4rem;
+  --card-row-gap: 3rem;
+  margin: 2rem auto;
+}
+
+.cardListContainer[data-columns="2"] {
+  width: calc(2 * var(--card-width) + var(--card-column-gap));
+}
+
+.cardListContainer[data-columns="3"] {
+  --card-width: 18rem;
+  --card-column-gap: 3rem;
+  width: calc(3 * var(--card-width) + 2 * var(--card-column-gap));
+}
+
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  column-gap: var(--card-column-gap);
+  row-gap: var(--card-row-gap);
+}
+
 .card {
-  flex: 0;
-  width: 24rem;
-  margin: 1rem;
+  flex: 0 1 var(--card-width);
   border: 1px solid var(--text-secondary-color);
   border-radius: 1rem;
 }
@@ -23,7 +48,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
 }
 
 .cardContent {
@@ -49,7 +74,7 @@
 }
 
 .cardArrow {
-  margin: 0 1rem;
+  margin: auto 1rem;
   margin-right: 1.5rem;
   font-family: var(--heading-typeface);
   font-size: 1.5rem;
