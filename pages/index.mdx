@@ -1,66 +1,27 @@
 ---
-title: Hello
+title: Home
 ---
 
-```
-import { Page } from "../components";
-```
+import { Card, CardList } from "../components";
 
-# Home
+## Welcome
 
-Does MDX processing work?
+Hi! I'm a computer science student and software developer. I enjoy learning and making things. Here are some pages on this site that I'd like to feature:
 
-- I sure hope
-- that it does
-  - Nested list?
-  - How far
-    - Does it go?
-      - Fourth level
-    - Let's see
-
-## Heading
-
-1. One
-2. Two
-3. Three
-4. Four
-5. Five
-6. Six
-7. Seven
-8. Eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight
-9. Nine
-   1. Nested?
-      1. Nested?
-   1. Nested?
-10. Ten
-
-> Block quote block quote block quote block quote block quote block quote
-
-### Heading 3
-
-Paragraph with _emphasis,_ **strong,** `inline code`, [link](/about).
-
-#### Heading 4
-
-```javascript
-Code block:
-  Indented
-  Stuff
-```
-
-##### Heading 5
-
-Asdf asdf asdf asdf asdf
-
-Qwerty qwerty qwerty
-
-###### Heading 6
-
-Lorem `ipsum` dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum `dolor` sit amet
-Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-
-```
-export default ({ children }) => <Page metadata={{ test: "asdf" }}>{children}</Page>;
-```
+<CardList numColumns={3}>
+  <Card
+    title="About me"
+    subtitle="Some more information about myself, plus my resume"
+    linkPath="/about"
+  />
+  <Card
+    title="Copy Better"
+    subtitle="A mobile app I created to make life easier"
+    linkPath="/apps/copy-better"
+  />
+  <Card
+    title="Triton Software Engineering"
+    subtitle="Projects I've worked on for a student org that I lead"
+    linkPath="/projects/tse"
+  />
+</CardList>

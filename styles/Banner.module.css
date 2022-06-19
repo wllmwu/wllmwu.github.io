@@ -1,0 +1,16 @@
+.bannerBackground {
+  height: 16rem;
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerTitle {
+  margin: 0;
+  border: none;
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0.02em 0.04em 0.04em var(--shadow-color);
+}

@@ -110,7 +110,7 @@ pre {
   max-width: 66em;
   background-color: var(--highlight-color);
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.75em;
   overflow-x: auto;
 }
 

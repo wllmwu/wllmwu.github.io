@@ -21,6 +21,10 @@
   padding: 0 8px;
 }
 
+.homeLink:hover {
+  text-decoration: none;
+}
+
 .topLinkList {
   display: flex;
   flex-direction: row;
