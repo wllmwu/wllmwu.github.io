@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--content-background-color);
+  flex: 1;
+  width: 100%;
+  border-top: 1px solid var(--text-secondary-color);
+}
+
+.footerContent {
+  width: 90%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  line-height: 2;
+}
+
+.rightAlign {
+  text-align: end;
+  flex: 1;
+}
