@@ -27,7 +27,7 @@ const pageComponentImportNode = {
           ],
           source: {
             type: "Literal",
-            value: "../components",
+            value: "#components",
           },
         },
       ],
