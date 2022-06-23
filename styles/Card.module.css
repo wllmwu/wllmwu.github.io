@@ -73,7 +73,7 @@
   color: var(--text-primary-color);
 }
 
-.cardThumbnail {
+.cardSecondaryContent {
   margin: auto 0;
   margin-left: 1rem;
 }

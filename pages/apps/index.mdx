@@ -2,7 +2,7 @@
 title: Apps
 ---
 
-import { Card, CardList } from "#components";
+import { Card, CardList, Image } from "#components";
 
 ## Published apps
 
@@ -13,8 +13,9 @@ I've been developing apps since high school. These are available on iOS—click 
     title="Math Keeper"
     subtitle="Customizable math formula study/reference app"
     linkPath="/apps/math-keeper"
-    thumbnail={{ source: "/images/math-keeper-icon.png", alt: "Math Keeper Icon" }}
-  />
+  >
+    <Image source="/images/math-keeper-icon.png" width={64} height={64} alt="Math Keeper icon" />
+  </Card>
   <Card
     title="Copy Better"
     subtitle="Convenient extended clipboard for copying and pasting"
