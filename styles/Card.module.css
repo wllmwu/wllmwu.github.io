@@ -73,6 +73,11 @@
   color: var(--text-primary-color);
 }
 
+.cardThumbnail {
+  margin: auto 0;
+  margin-left: 1rem;
+}
+
 .cardArrow {
   margin: auto 1rem;
   margin-right: 1.5rem;
