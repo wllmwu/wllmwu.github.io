@@ -37,6 +37,7 @@
 
 .card:hover * {
   color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .cardLink:hover {

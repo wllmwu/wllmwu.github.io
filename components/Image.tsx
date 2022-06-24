@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
-// import NextImage from "next/image";
+import { combineClasses } from "../utils";
 import styles from "../styles/Image.module.css";
 
 interface ImageProps {
@@ -9,21 +9,10 @@ interface ImageProps {
   width: number;
   height: number;
   alt?: string;
+  className?: string;
 }
 
-// const loader = ({ src }: { src: string }) => src;
-
-function Image({ source, width, height, alt }: ImageProps) {
-  // return (
-  //   <NextImage
-  //     loader={loader}
-  //     src={source}
-  //     width={width}
-  //     height={height}
-  //     layout="intrinsic"
-  //     alt={alt}
-  //   />
-  // );
+function Image({ source, width, height, alt, className }: ImageProps) {
   return (
     <img
       src={source}
@@ -31,9 +20,19 @@ function Image({ source, width, height, alt }: ImageProps) {
       decoding="async"
       width={width}
       height={height}
-      className={styles.image}
+      className={combineClasses(styles.image, className ?? "")}
     />
   );
+}
+
+interface AppIconImageProps {
+  source: string;
+  size: number;
+  alt?: string;
+}
+
+export function AppIconImage({ source, size, alt }: AppIconImageProps) {
+  return <Image source={source} width={size} height={size} alt={alt} className={styles.appIcon} />;
 }
 
 export default Image;
