@@ -6,9 +6,10 @@ interface CardProps {
   title: string;
   subtitle?: string;
   linkPath: string;
+  children: React.ReactNode;
 }
 
-function Card({ title, subtitle, linkPath }: CardProps) {
+function Card({ title, subtitle, linkPath, children }: CardProps) {
   return (
     <div className={styles.card}>
       <Link href={linkPath}>
@@ -18,6 +19,7 @@ function Card({ title, subtitle, linkPath }: CardProps) {
               <div className={styles.cardTitle}>{title}</div>
               {subtitle && <div className={styles.cardSubtitle}>{subtitle}</div>}
             </div>
+            {children && <div className={styles.cardSecondaryContent}>{children}</div>}
             <div className={styles.cardArrow}>{"\u276f"}</div>
           </div>
         </a>

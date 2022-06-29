@@ -37,6 +37,7 @@
 
 .card:hover * {
   color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .cardLink:hover {
@@ -71,6 +72,11 @@
   font-size: 1rem;
   font-weight: var(--weight-normal);
   color: var(--text-primary-color);
+}
+
+.cardSecondaryContent {
+  margin: auto 0;
+  margin-left: 1rem;
 }
 
 .cardArrow {
