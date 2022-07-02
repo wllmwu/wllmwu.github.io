@@ -9,7 +9,7 @@ const nextConfig = {
     loader: "custom",
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  redirects: async () => [{ source: "/projects", destination: "/projects/tse", permanent: true }],
+  redirects: async () => [{ source: "/projects", destination: "/projects/tse", permanent: false }],
 };
 
 const withMDX = mdxConfig({
