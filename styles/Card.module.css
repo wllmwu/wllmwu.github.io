@@ -10,8 +10,8 @@
 }
 
 .cardListContainer[data-columns="3"] {
-  --card-width: 18rem;
-  --card-column-gap: 3rem;
+  --card-width: 16rem;
+  --card-column-gap: 2rem;
   width: calc(3 * var(--card-width) + 2 * var(--card-column-gap));
 }
 
