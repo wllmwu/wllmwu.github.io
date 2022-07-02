@@ -17,7 +17,7 @@ function Footer() {
           </Link>
           <br />
           <Link href="/privacy">
-            <a>Privacy policies</a>
+            <a>Privacy policy</a>
           </Link>
         </div>
       </div>
