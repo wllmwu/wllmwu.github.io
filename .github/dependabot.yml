@@ -16,6 +16,7 @@ updates:
     labels:
       - "maintenance"
     ignore:
-      - update-types:
+      - dependency-name: "*"
+        update-types:
           - "version-update:semver-patch"
     open-pull-requests-limit: 10
