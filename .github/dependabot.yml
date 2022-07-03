@@ -8,11 +8,11 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+      day: "sunday"
       time: "08:00"
       timezone: "America/Los_Angeles"
     assignees:
       - "wllmwu"
     labels:
       - "maintenance"
-    open-pull-requests-limit: 10
