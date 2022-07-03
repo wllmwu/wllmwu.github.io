@@ -8,11 +8,14 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
-      day: "sunday"
+      interval: "monthly" # Runs on the 1st
       time: "08:00"
       timezone: "America/Los_Angeles"
     assignees:
       - "wllmwu"
     labels:
       - "maintenance"
+    ignore:
+      - update-types:
+          - "version-update:semver-patch"
+    open-pull-requests-limit: 10
