@@ -19,13 +19,13 @@
     "@mdx-js/loader": "^2.1.2",
     "@next/mdx": "^12.1.6",
     "next": "^12.1.5",
-    "react": "^18.0.0",
+    "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "remark-frontmatter": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.0.1",
-    "@types/react": "^18.0.6",
+    "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.2",
     "@typescript-eslint/eslint-plugin": "^5.30.4",
     "eslint": "^8.19.0",
