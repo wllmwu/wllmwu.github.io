@@ -22,6 +22,7 @@ function MyDocument() {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth@87.5&display=swap"
           rel="stylesheet"
         />
+        <meta httpEquiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
       </Head>
       <body>
         <Main />
