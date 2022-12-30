@@ -24,10 +24,11 @@ function NavigationBarTopLink({ node, currentPath }: NavigationBarTopLinkProps) 
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <Link href={destination}>
-        <a className={combineClasses(styles.topLink, isInCurrentPath ? styles.topLinkCurrent : "")}>
-          {node.title.toUpperCase()}
-        </a>
+      <Link
+        href={destination}
+        className={combineClasses(styles.topLink, isInCurrentPath ? styles.topLinkCurrent : "")}
+      >
+        {node.title.toUpperCase()}
       </Link>
       {node.children && (
         <NavigationBarSubmenu

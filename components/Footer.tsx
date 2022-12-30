@@ -12,13 +12,9 @@ function Footer() {
           Site designed and implemented by me. Built with Next.js, hosted with GitHub Pages.
         </div>
         <div className={styles.rightAlign}>
-          <Link href="/contact">
-            <a>Contact me</a>
-          </Link>
+          <Link href="/contact">Contact me</Link>
           <br />
-          <Link href="/privacy">
-            <a>Privacy policies</a>
-          </Link>
+          <Link href="/privacy">Privacy policies</Link>
         </div>
       </div>
     </div>
