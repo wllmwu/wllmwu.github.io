@@ -59,8 +59,8 @@ function NavigationBar() {
 
   return (
     <nav id={navbarID} className={styles.navigationBar}>
-      <Link href="/">
-        <a className={styles.homeLink}>William Wu</a>
+      <Link href="/" className={styles.homeLink}>
+        William Wu
       </Link>
       <menu className={styles.topLinkList}>
         {navBarNodes.map((node) => (

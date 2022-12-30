@@ -25,11 +25,12 @@ function NavigationBarSublink({ node, linkPrefix, currentPath }: NavigationBarSu
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <Link href={destination}>
-        <a className={combineClasses(styles.sublink, isInCurrentPath ? styles.sublinkCurrent : "")}>
-          {node.title}
-          {node.children && <span className={styles.sublinkArrow}>{"\u276f"}</span>}
-        </a>
+      <Link
+        href={destination}
+        className={combineClasses(styles.sublink, isInCurrentPath ? styles.sublinkCurrent : "")}
+      >
+        {node.title}
+        {node.children && <span className={styles.sublinkArrow}>{"\u276f"}</span>}
       </Link>
       {node.children && (
         <NavigationBarSubmenu
