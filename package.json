@@ -12,7 +12,6 @@
     "start": "next start",
     "lint": "eslint --max-warnings 0 --report-unused-disable-directives",
     "export": "next export",
-    "deploy": "next build && next export && cp CNAME out/ && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "prepare": "husky install"
   },
   "dependencies": {
