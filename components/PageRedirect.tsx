@@ -12,7 +12,7 @@ function PageRedirect({ destination }: PageRedirectProps) {
     router.push(destination);
   }, [router, destination]);
 
-  return <p>{"Redirecting\u2026"}</p>;
+  return <p>Redirecting&hellip;</p>;
 }
 
 export default PageRedirect;
