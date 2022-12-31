@@ -7,7 +7,7 @@ function Footer() {
     <div className={styles.footer}>
       <div className={styles.footerContent}>
         <div>
-          <p>{"\u00a9"} 2022 William Wu.</p>
+          <p>{"\u00a9"} 2023 William Wu.</p>
           <p>Site designed and implemented by me. Built with Next.js, hosted with GitHub Pages.</p>
         </div>
         <div className={styles.rightAlign}>
