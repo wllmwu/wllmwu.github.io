@@ -35,6 +35,10 @@ const navBarNodes: NavBarNode[] = [
     title: "Projects",
     children: [
       {
+        slug: "course-grapher",
+        title: "UCSD Course Grapher",
+      },
+      {
         slug: "tse",
         title: "Triton Software Engineering",
       },

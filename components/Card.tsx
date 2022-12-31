@@ -15,8 +15,8 @@ function Card({ title, subtitle, linkPath, children }: CardProps) {
       <Link href={linkPath} className={styles.cardLink}>
         <div className={styles.cardInnerWrapper}>
           <div className={styles.cardContent}>
-            <div className={styles.cardTitle}>{title}</div>
-            {subtitle && <div className={styles.cardSubtitle}>{subtitle}</div>}
+            <p className={styles.cardTitle}>{title}</p>
+            {subtitle && <p className={styles.cardSubtitle}>{subtitle}</p>}
           </div>
           {children && <div className={styles.cardSecondaryContent}>{children}</div>}
           <div className={styles.cardArrow}>{"\u276f"}</div>
