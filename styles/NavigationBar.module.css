@@ -4,7 +4,6 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  min-width: max-content;
   box-shadow: 0px 2px 2px 2px var(--shadow-color);
   padding: 1.5rem 2rem;
   display: flex;
@@ -58,6 +57,20 @@
   border-color: var(--accent-color);
 }
 
-.hidden {
-  visibility: hidden;
+@media (max-width: 960px) {
+  .navigationBar {
+    flex-direction: column;
+  }
+
+  .topLinkList {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigationBar {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
