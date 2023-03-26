@@ -1,4 +1,8 @@
 .navigationBar {
+  --menus-border-radius: 8px;
+  --top-link-font-size: 1.75rem;
+  --top-link-vertical-padding: 0.75rem;
+  --top-link-horizontal-padding: 1.5rem;
   background-color: var(--content-background-color);
   position: sticky;
   top: 0;
@@ -6,7 +10,7 @@
   width: 100%;
   min-width: max-content;
   box-shadow: 0px 2px 2px 2px var(--shadow-color);
-  padding: 24px 32px;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -16,9 +20,9 @@
   color: var(--text-primary-color);
   font-family: var(--body-typeface);
   font-weight: var(--weight-bold);
-  font-size: 2rem;
+  font-size: var(--top-link-font-size);
   white-space: nowrap;
-  padding: 0 8px;
+  padding: 0 0.5rem;
 }
 
 .homeLink:hover {
@@ -29,22 +33,22 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  margin-left: 96px;
+  margin-left: 4rem;
+  padding: var(--top-link-vertical-padding) 0;
 }
 
 .topLinkItem {
   list-style-type: none;
   position: relative;
-  padding: 1rem 0;
 }
 
 .topLink {
   font-family: var(--heading-typeface);
-  font-size: 1.6rem;
+  font-size: var(--top-link-font-size);
   font-weight: var(--weight-medium);
   color: var(--text-primary-color);
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  padding: var(--top-link-vertical-padding) var(--top-link-horizontal-padding);
+  border-radius: var(--menus-border-radius);
 }
 
 .topLink:hover {
@@ -57,29 +61,30 @@
 }
 
 .navigationBarSubmenu {
-  --submenu-border-radius: 4px;
+  --submenu-border-width: 1px;
+  --submenu-font-size: 1.25rem;
   display: flex;
   flex-direction: column;
   background-color: var(--content-background-color);
   position: absolute;
   z-index: 1000;
   width: max-content;
-  border: 1px solid #000;
-  border-radius: var(--submenu-border-radius);
+  border: var(--submenu-border-width) solid #000;
+  border-radius: var(--menus-border-radius);
 }
 
 .navigationBarSubmenu.below {
-  top: calc(100% - 0.5rem);
-  left: 0.5rem;
+  top: calc(100% + var(--top-link-vertical-padding));
+  left: 0;
 }
 
 .navigationBarSubmenu.below.left {
   left: unset;
-  right: 0.5rem;
+  right: 0;
 }
 
 .navigationBarSubmenu.beside {
-  top: -1px;
+  top: calc(0 - var(--submenu-border-width));
   left: calc(100% - 1rem);
 }
 
@@ -94,23 +99,22 @@
 
 .sublink {
   font-family: var(--heading-secondary-typeface);
-  font-size: 1.25rem;
+  font-size: var(--submenu-font-size);
   font-weight: var(--weight-normal);
   color: var(--text-primary-color);
   display: flex;
   width: 100%;
-  padding: 0.75rem 1rem;
-  padding-right: 1.5rem;
+  padding: 0.625rem 1rem;
 }
 
 .sublinkItem:first-child > .sublink {
-  border-top-left-radius: var(--submenu-border-radius);
-  border-top-right-radius: var(--submenu-border-radius);
+  border-top-left-radius: var(--menus-border-radius);
+  border-top-right-radius: var(--menus-border-radius);
 }
 
 .sublinkItem:last-child > .sublink {
-  border-bottom-left-radius: var(--submenu-border-radius);
-  border-bottom-right-radius: var(--submenu-border-radius);
+  border-bottom-left-radius: var(--menus-border-radius);
+  border-bottom-right-radius: var(--menus-border-radius);
 }
 
 .sublink:hover {
@@ -124,6 +128,7 @@
 
 .sublinkArrow {
   margin-left: 2rem;
+  margin-right: 0.5rem;
   align-self: flex-end;
 }
 
