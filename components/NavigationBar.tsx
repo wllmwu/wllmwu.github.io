@@ -21,7 +21,7 @@ function NavigationBar() {
               href={`/${node.slug}`}
               className={combineClasses(
                 styles.topLink,
-                currentPath.startsWith(node.slug) ? styles.topLinkCurrent : ""
+                currentPath.startsWith(node.slug) ? styles.topLinkCurrent : null
               )}
             >
               {node.title.toUpperCase()}

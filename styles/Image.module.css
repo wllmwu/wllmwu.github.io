@@ -17,7 +17,7 @@
 
 .appIcon {
   border: 1px solid var(--highlight-color);
-  border-radius: 20%;
+  border-radius: 25%;
   box-sizing: content-box;
 }
 

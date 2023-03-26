@@ -20,7 +20,7 @@ function Image({ source, width, height, alt, className }: ImageProps) {
       decoding="async"
       width={width}
       height={height}
-      className={combineClasses(styles.image, className ?? "")}
+      className={combineClasses(styles.image, className)}
     />
   );
 }
