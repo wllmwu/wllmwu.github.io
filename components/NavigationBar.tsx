@@ -7,7 +7,8 @@ import styles from "../styles/NavigationBar.module.css";
 
 function NavigationBar() {
   const router = useRouter();
-  const currentPath = trimSlashes(router.pathname);
+  const currentPath = trimSlashes(router.pathname).split("/");
+  const currentBase = currentPath.length > 0 ? currentPath[0] : "";
 
   return (
     <nav className={styles.navigationBar}>
@@ -21,7 +22,7 @@ function NavigationBar() {
               href={`/${node.slug}`}
               className={combineClasses(
                 styles.topLink,
-                currentPath.startsWith(node.slug) ? styles.topLinkCurrent : null
+                currentBase === node.slug ? styles.topLinkCurrent : null
               )}
             >
               {node.title.toUpperCase()}

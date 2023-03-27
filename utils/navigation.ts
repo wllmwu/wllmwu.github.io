@@ -6,6 +6,10 @@ export interface SiteNode {
 
 export const siteMap: SiteNode[] = [
   {
+    slug: "",
+    title: "Home",
+  },
+  {
     slug: "about",
     title: "About",
   },

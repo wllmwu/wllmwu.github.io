@@ -27,14 +27,15 @@
 .topLinkList {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: baseline;
-  margin-left: 4rem;
+  margin-left: 1rem;
 }
 
 .topLinkItem {
   list-style-type: none;
   position: relative;
-  padding: 0 1.5rem;
+  margin-left: 2rem;
 }
 
 .topLink {
@@ -64,7 +65,6 @@
 
   .topLinkList {
     margin-left: 0;
-    flex-wrap: wrap;
   }
 }
 
