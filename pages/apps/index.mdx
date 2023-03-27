@@ -2,11 +2,18 @@
 title: Apps
 ---
 
-import { Card, CardList, AppIconImage } from "#components";
+import { Card, CardList, AppIconImage, Showcase } from "#components";
 
 ## Published apps
 
 I've been developing apps since high school. These are available on iOS&mdash;click below to learn more!
+
+<Showcase
+  title="Copy Better"
+  description="A convenient clipboard extension app for storing and organizing clips to paste anywhere. Recently reached 14,000 downloads on the App Store!"
+  link="/apps/copy-better"
+  thumbnail="/images/copy-better/thumbnail.png"
+/>
 
 <CardList>
   <Card
@@ -18,7 +25,7 @@ I've been developing apps since high school. These are available on iOS&mdash;cl
   </Card>
   <Card
     title="Copy Better"
-    subtitle="Convenient extended clipboard for copying and pasting"
+    subtitle="Convenient extended clipboard for copying and pasting (14,000+ downloads!)"
     linkPath="/apps/copy-better"
   >
     <AppIconImage source="/images/copy-better/icon.png" size={80} alt="Copy Better icon" />

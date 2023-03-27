@@ -6,3 +6,4 @@ export { default as Layout } from "./Layout";
 export { default as Page } from "./Page";
 export { default as PageRedirect } from "./PageRedirect";
 export { default as PinkSquare } from "./PinkSquare";
+export { default as Showcase } from "./Showcase";

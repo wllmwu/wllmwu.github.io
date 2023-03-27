@@ -18,6 +18,7 @@ function Image({ source, width, height, alt, className }: ImageProps) {
       src={source}
       alt={alt}
       decoding="async"
+      loading="lazy"
       width={width}
       height={height}
       className={combineClasses(styles.image, className)}
