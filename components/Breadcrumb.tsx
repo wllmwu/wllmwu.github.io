@@ -25,9 +25,9 @@ function Breadcrumb() {
   return (
     <span className={styles.breadcrumbs}>
       {pathNodes.map((node, index) => (
-        <>
+        <React.Fragment key={node.slug}>
           <Link
-            href={`/${pathNodes
+            href={`${pathNodes
               .slice(0, index + 1)
               .map((n) => n.slug)
               .join("/")}`}
@@ -35,7 +35,7 @@ function Breadcrumb() {
             {node.title}
           </Link>
           {index < pathNodes.length - 1 && " / "}
-        </>
+        </React.Fragment>
       ))}
     </span>
   );
