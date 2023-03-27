@@ -1,7 +1,17 @@
-.showcaseBox {
-  width: 60%;
-  max-width: 32rem;
+.showcaseGrid {
+  width: 100%;
+  max-width: 64rem;
   margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  row-gap: 1rem;
+}
+
+.showcaseBox {
+  width: 48%;
   border: 1px solid var(--text-secondary-color);
   border-radius: var(--common-border-radius);
   overflow: hidden;
@@ -36,13 +46,15 @@
 }
 
 @media (max-width: 960px) {
-  .showcaseBox {
-    width: 75%;
+  .showcaseGrid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
   }
-}
 
-@media (max-width: 800px) {
   .showcaseBox {
     width: 100%;
+    max-width: 32rem;
   }
 }

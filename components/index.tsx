@@ -7,3 +7,4 @@ export { default as Page } from "./Page";
 export { default as PageRedirect } from "./PageRedirect";
 export { default as PinkSquare } from "./PinkSquare";
 export { default as Showcase } from "./Showcase";
+export { default as ShowcaseGrid } from "./ShowcaseGrid";
