@@ -17,7 +17,7 @@ export interface ShowcaseProps {
 function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
   return (
     <div className={styles.showcaseBox}>
-      <Link href={link}>
+      <Link href={link} tabIndex={-1}>
         <Image
           source={thumbnail.source}
           width={thumbnail.width}
