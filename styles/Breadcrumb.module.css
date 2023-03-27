@@ -1,0 +1,7 @@
+.breadcrumbs {
+  padding: 2rem 4rem 0;
+  font-family: var(--heading-typeface);
+  font-size: 1.25rem;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+}

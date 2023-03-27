@@ -1,7 +1,6 @@
 .layoutWrapper {
   --inner-width: 90%;
   --inner-max-width: 1024px;
-  min-width: max-content;
 }
 
 .background {
@@ -11,10 +10,20 @@
   padding-bottom: 32px;
 }
 
-.container {
+.pageContainer {
   background-color: transparent;
   width: var(--inner-width);
   max-width: var(--inner-max-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+.skipLink {
+  position: absolute;
+  top: -2em;
+  z-index: 2000;
+}
+
+.skipLink:focus {
+  top: 0;
 }

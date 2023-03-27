@@ -1,6 +1,7 @@
 :root {
   --background-color: #f0f0f0;
   --content-background-color: #fff;
+  --content-overlay-color: #ffffffe8;
   --text-primary-color: #000;
   --text-secondary-color: #b0b0b0;
   --accent-color: #00b0f0;
@@ -15,6 +16,7 @@
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
+  --common-border-radius: 8px;
 }
 
 * {
@@ -42,12 +44,12 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   border-bottom: 3px solid var(--highlight-color);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   border-bottom: 2px solid var(--highlight-color);
 }
 

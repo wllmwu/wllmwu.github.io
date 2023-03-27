@@ -1,61 +1,31 @@
 .cardListContainer {
-  --card-width: 24rem;
-  --card-column-gap: 4rem;
-  --card-row-gap: 3rem;
-  margin: 2rem auto;
-}
-
-.cardListContainer[data-columns="2"] {
-  width: calc(2 * var(--card-width) + var(--card-column-gap));
-}
-
-.cardListContainer[data-columns="3"] {
-  --card-width: 16rem;
-  --card-column-gap: 2rem;
-  width: calc(3 * var(--card-width) + 2 * var(--card-column-gap));
+  margin: 2rem 0;
 }
 
 .cardList {
+  --card-gutter: 2rem;
+  margin: 0 auto;
+  max-width: 48rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
-  column-gap: var(--card-column-gap);
-  row-gap: var(--card-row-gap);
+  column-gap: var(--card-gutter);
+  row-gap: var(--card-gutter);
 }
 
 .card {
-  flex: 0 1 var(--card-width);
+  width: calc(calc(100% - var(--card-gutter)) / 2);
   border: 1px solid var(--text-secondary-color);
-  border-radius: 1rem;
-}
-
-.card:hover {
-  border-color: var(--accent-color);
-}
-
-.card:hover * {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.cardLink:hover {
-  text-decoration: none;
-}
-
-.cardInnerWrapper {
-  width: 100%;
-  height: 100%;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  padding: 1.5rem;
 }
 
 .cardContent {
   flex: 1;
-  padding: 1.5rem 1.75rem;
-  padding-right: 0;
 }
 
 .cardTitle {
@@ -63,29 +33,26 @@
   font-family: var(--heading-typeface);
   font-size: 1.5rem;
   font-weight: var(--weight-medium);
-  color: var(--text-primary-color);
   text-transform: uppercase;
 }
 
 .cardSubtitle {
   margin: 0;
   margin-top: 0.75em;
-  font-family: var(--body-typeface);
-  font-size: 1rem;
-  font-weight: var(--weight-normal);
-  color: var(--text-primary-color);
 }
 
 .cardSecondaryContent {
+  flex: 0;
   margin: auto 0;
   margin-left: 1rem;
 }
 
-.cardArrow {
-  margin: auto 1rem;
-  margin-right: 1.5rem;
-  font-family: var(--heading-typeface);
-  font-size: 1.5rem;
-  font-weight: var(--weight-medium);
-  color: var(--text-primary-color);
+@media (max-width: 800px) {
+  .cardList {
+    max-width: 24rem;
+  }
+
+  .card {
+    width: 100%;
+  }
 }

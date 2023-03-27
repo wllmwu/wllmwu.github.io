@@ -10,10 +10,13 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.layoutWrapper}>
+      <a href="#main-content" className={styles.skipLink}>
+        Skip to main content
+      </a>
       <NavigationBar />
-      <main>
+      <main id="main-content">
         <div className={styles.background}>
-          <div className={styles.container}>{children}</div>
+          <div className={styles.pageContainer}>{children}</div>
         </div>
       </main>
       <Footer />

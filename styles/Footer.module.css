@@ -8,15 +8,35 @@
 .footerContent {
   width: var(--inner-width);
   max-width: var(--inner-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em 0.25em 2em 0.25em;
-  display: flex;
-  flex-direction: row;
-  line-height: 2;
+  margin: 0 auto;
+  padding: 1rem 0.25rem 2rem;
 }
 
-.rightAlign {
-  text-align: end;
-  flex: 1;
+.siteMap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  row-gap: 0;
+  column-gap: 4rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.siteMap p {
+  margin: 0;
+  margin-top: 0.25em;
+}
+
+.siteMapColumn {
+  margin: 0;
+  max-width: 100%;
+}
+
+.siteMapPageList {
+  padding: 0;
+  padding-left: 1rem;
+  list-style-type: none;
 }
