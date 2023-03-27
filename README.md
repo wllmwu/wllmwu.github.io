@@ -20,4 +20,5 @@ Support for YAML-style frontmatter in Markdown files is also implemented. The fo
 
 - `title` (string): The title of the page.
 - `seoTitle` (optional string): The string to use for the page's actual `<title>` tag in its `<head>`. Will be automatically appended with the site name. If not provided, then defaults to the value of `title`.
-- `showBanner` (optional boolean): Whether to include a banner at the top of the page. Defaults to `true`.
+- `hideBanner` (optional boolean): Whether to hide the banner at the top of the page. Defaults to `false`.
+- `hideBreadcrumb` (optional boolean): Whether to hide the breadcrumb trail at the top of the page. Defaults to `false`.
