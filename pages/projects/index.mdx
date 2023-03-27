@@ -2,21 +2,29 @@
 title: Projects
 ---
 
-import { Card, CardList } from "#components";
+import { Showcase } from "#components";
 
 ## My projects
 
 Check out some projects I've worked on below! These include both personal projects that I created in my free time and applications that I developed as part of a team.
 
-<CardList>
-  <Card
-    title="UCSD Course Grapher"
-    subtitle="A graphical course planning tool for UCSD students"
-    linkPath="/projects/course-grapher"
-  />
-  <Card
-    title="Triton SE"
-    subtitle="Projects I've worked on for a student org that I lead"
-    linkPath="/projects/tse"
-  />
-</CardList>
+<Showcase
+  title="UCSD Course Grapher"
+  description="A course planning tool for UCSD students that visualizes course prerequisites as graphs. Built with React and Python."
+  link="/projects/course-grapher"
+  thumbnail={{
+    source: "/images/course-grapher/thumbnail.png",
+    width: 1067,
+    height: 600,
+  }}
+/>
+<Showcase
+  title="Triton SE"
+  description="Projects for nonprofits that I've worked on as part of a student org at UCSD."
+  link="/projects/tse"
+  thumbnail={{
+    source: "/images/tse/thumbnail.png",
+    width: 1067,
+    height: 600,
+  }}
+/>
