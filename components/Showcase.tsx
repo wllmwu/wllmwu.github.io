@@ -17,13 +17,15 @@ export interface ShowcaseProps {
 function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
   return (
     <div className={styles.showcaseBox}>
-      <Image
-        source={thumbnail.source}
-        width={thumbnail.width}
-        height={thumbnail.height}
-        alt={`${title} thumbnail`}
-        className={styles.showcaseThumbnail}
-      />
+      <Link href={link}>
+        <Image
+          source={thumbnail.source}
+          width={thumbnail.width}
+          height={thumbnail.height}
+          alt={`Go to the ${title} page`}
+          className={styles.showcaseThumbnail}
+        />
+      </Link>
       <div className={styles.showcaseOverlay}>
         <p className={styles.showcaseTitle}>
           <Link href={link}>{title}</Link>

@@ -1,7 +1,7 @@
 :root {
   --background-color: #f0f0f0;
   --content-background-color: #fff;
-  --content-overlay-color: #fffffff0;
+  --content-overlay-color: #ffffffe8;
   --text-primary-color: #000;
   --text-secondary-color: #b0b0b0;
   --accent-color: #00b0f0;
@@ -48,24 +48,24 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   border-bottom: 2px solid var(--highlight-color);
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 h5 {
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 p {
