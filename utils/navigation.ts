@@ -29,7 +29,7 @@ export const siteMap: SiteNode[] = [
     children: [
       {
         slug: "course-grapher",
-        title: "UCSD Course Grapher",
+        title: "Course Grapher",
       },
       {
         slug: "tse",

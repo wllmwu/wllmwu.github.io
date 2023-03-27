@@ -1,12 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import Banner from "./Banner";
+import Breadcrumb from "./Breadcrumb";
 import styles from "../styles/Page.module.css";
 
 interface PageMetadata {
   title: string;
   seoTitle?: string;
-  showBanner?: boolean;
+  hideBanner?: boolean;
+  hideBreadcrumb?: boolean;
 }
 
 interface PageProps {
@@ -22,7 +24,8 @@ function Page({ metadata, children }: PageProps) {
       <Head>
         <title>{formatPageTitle(metadata.seoTitle ?? metadata.title)}</title>
       </Head>
-      {(metadata.showBanner ?? true) && <Banner title={metadata.title} />}
+      {!metadata.hideBanner && <Banner title={metadata.title} />}
+      {!metadata.hideBreadcrumb && <Breadcrumb />}
       <div className={styles.content}>{children}</div>
     </div>
   );
