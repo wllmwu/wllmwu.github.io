@@ -12,6 +12,13 @@
   font-size: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .navigationBar {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
 .homeLink {
   color: var(--text-primary-color);
   font-family: var(--body-typeface);
@@ -57,21 +64,4 @@
 
 .topLinkCurrent:hover {
   border-color: var(--accent-color);
-}
-
-@media (max-width: 960px) {
-  .navigationBar {
-    flex-direction: column;
-  }
-
-  .topLinkList {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .navigationBar {
-    font-size: 1rem;
-    padding: 1rem;
-  }
 }

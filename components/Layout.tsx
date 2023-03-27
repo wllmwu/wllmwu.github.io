@@ -9,7 +9,7 @@ interface LayoutProps {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className={styles.layoutWrapper}>
+    <div>
       <a href="#main-content" className={styles.skipLink}>
         Skip to main content
       </a>

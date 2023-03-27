@@ -6,10 +6,17 @@
 }
 
 .footerContent {
-  width: var(--inner-width);
-  max-width: var(--inner-max-width);
+  width: var(--content-width);
+  max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 1rem 0.25rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+  }
 }
 
 .siteMap {
@@ -18,8 +25,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: stretch;
-  row-gap: 0;
+  align-items: flex-start;
+  row-gap: 1rem;
   column-gap: 4rem;
   padding: 0;
   list-style-type: none;
@@ -27,12 +34,20 @@
 
 .siteMap p {
   margin: 0;
-  margin-top: 0.25em;
 }
 
 .siteMapColumn {
   margin: 0;
   max-width: 100%;
+  border-left: 1px solid var(--text-secondary-color);
+  padding-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .siteMap {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
 
 .siteMapPageList {
