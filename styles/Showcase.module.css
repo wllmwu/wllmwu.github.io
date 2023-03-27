@@ -32,11 +32,17 @@
 
 .showcaseDescription {
   margin: 0;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   .showcaseBox {
-    width: 95%;
+    width: 75%;
+  }
+}
+
+@media (max-width: 800px) {
+  .showcaseBox {
+    width: 100%;
   }
 }

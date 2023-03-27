@@ -7,16 +7,20 @@ export interface ShowcaseProps {
   title: string;
   description: string;
   link: string;
-  thumbnail: string;
+  thumbnail: {
+    source: string;
+    width: number;
+    height: number;
+  };
 }
 
 function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
   return (
     <div className={styles.showcaseBox}>
       <Image
-        source={thumbnail}
-        width={800}
-        height={600}
+        source={thumbnail.source}
+        width={thumbnail.width}
+        height={thumbnail.height}
         alt={`${title} thumbnail`}
         className={styles.showcaseThumbnail}
       />

@@ -1,7 +1,7 @@
 .layoutWrapper {
   --inner-width: 90%;
   --inner-max-width: 1024px;
-  min-width: max-content;
+  /* min-width: max-content; */
 }
 
 .background {
