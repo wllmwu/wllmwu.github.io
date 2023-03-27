@@ -17,10 +17,10 @@ export const siteMap: SiteNode[] = [
     slug: "apps",
     title: "Apps",
     children: [
-      { slug: "math-keeper", title: "Math Keeper" },
       { slug: "copy-better", title: "Copy Better" },
       { slug: "snake-cubed", title: "Snake, Cubed" },
       { slug: "harvesthaul", title: "HarvestHaul" },
+      { slug: "math-keeper", title: "Math Keeper" },
     ],
   },
   {
