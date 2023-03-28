@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { combineClasses, trimSlashes } from "../utils";
 import { siteMap } from "../utils/navigation";
@@ -12,13 +11,13 @@ function NavigationBar() {
 
   return (
     <nav className={styles.navigationBar}>
-      <Link href="/" className={styles.homeLink}>
+      <a href="/" className={styles.homeLink}>
         William Wu
-      </Link>
+      </a>
       <menu className={styles.topLinkList}>
         {siteMap.map((node) => (
           <li key={node.slug} className={styles.topLinkItem}>
-            <Link
+            <a
               href={`/${node.slug}`}
               className={combineClasses(
                 styles.topLink,
@@ -26,7 +25,7 @@ function NavigationBar() {
               )}
             >
               {node.title.toUpperCase()}
-            </Link>
+            </a>
           </li>
         ))}
       </menu>
