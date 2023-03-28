@@ -35,6 +35,10 @@
   margin: 0;
 }
 
+:target {
+  scroll-margin-top: 8rem;
+}
+
 html,
 body {
   font-family: var(--body-typeface);

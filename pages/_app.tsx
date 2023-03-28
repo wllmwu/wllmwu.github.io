@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         h1: Headings.H1,
         h2: Headings.H2,
         h3: Headings.H3,
+        h4: Headings.H4,
       }}
     >
       <Layout>

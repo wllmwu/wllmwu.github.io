@@ -1,21 +1,30 @@
 import React from "react";
-import Link from "next/link";
-import styles from "../styles/Headings.module.css";
+import { slugify, stringifyReactNode } from "../utils";
 
 type HeadingProps = React.HTMLAttributes<HTMLHeadingElement>;
+type HeadingElementType = React.JSXElementConstructor<HeadingProps>;
 
-function H1({ children }: HeadingProps) {
-  return <h1>{children}</h1>;
+const H1Alias: HeadingElementType = (props) => <h1 {...props}>{props.children}</h1>;
+const H2Alias: HeadingElementType = (props) => <h2 {...props}>{props.children}</h2>;
+const H3Alias: HeadingElementType = (props) => <h3 {...props}>{props.children}</h3>;
+const H4Alias: HeadingElementType = (props) => <h4 {...props}>{props.children}</h4>;
+
+function withAnchor(HeadingElement: HeadingElementType) {
+  return function HeadingWithAnchor({ children }: HeadingProps) {
+    const slug = slugify(stringifyReactNode(children));
+    return (
+      <HeadingElement id={slug}>
+        {children} <a href={`#${slug}`}>#</a>
+      </HeadingElement>
+    );
+  };
 }
 
-function H2({ children }: HeadingProps) {
-  return <h2>{children}</h2>;
-}
+const H1: HeadingElementType = withAnchor(H1Alias);
+const H2: HeadingElementType = withAnchor(H2Alias);
+const H3: HeadingElementType = withAnchor(H3Alias);
+const H4: HeadingElementType = withAnchor(H4Alias);
 
-function H3({ children }: HeadingProps) {
-  return <h3>{children}</h3>;
-}
-
-const Headings = { H1, H2, H3 };
+const Headings = { H1, H2, H3, H4 };
 
 export default Headings;
