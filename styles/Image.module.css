@@ -8,7 +8,13 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: nowrap;
+  column-gap: 2%;
   overflow-x: auto;
+}
+
+.carousel .image {
+  max-width: 90%;
+  height: auto;
 }
 
 .image {
@@ -25,5 +31,4 @@
   display: inline-block;
   border: 1px solid var(--highlight-color);
   box-sizing: content-box;
-  margin-right: 2rem;
 }

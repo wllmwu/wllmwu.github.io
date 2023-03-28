@@ -14,8 +14,9 @@
 
 @media (max-width: 768px) {
   .navigationBar {
-    font-size: 1rem;
     padding: 1rem;
+    flex-direction: column;
+    font-size: 1rem;
   }
 }
 
@@ -24,7 +25,7 @@
   font-family: var(--body-typeface);
   font-weight: var(--weight-bold);
   white-space: nowrap;
-  padding: 0 0.5rem;
+  padding-right: 1rem;
 }
 
 .homeLink:hover {
@@ -35,8 +36,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  row-gap: 0.5rem;
   align-items: baseline;
-  margin-left: 1rem;
   padding: 0;
   list-style-type: none;
 }
