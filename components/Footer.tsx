@@ -12,14 +12,15 @@ function Footer() {
           Site designed and implemented by me. Built with Next.js, hosted with GitHub Pages.{" "}
           <Link href="/privacy">Privacy policies</Link>
         </p>
+        <p>Site map:</p>
         <ul className={styles.siteMap}>
           {siteMap.map((node) => (
-            <li key={node.slug} className={styles.siteMapColumn}>
+            <li key={node.slug} className={styles.siteMapItem}>
               <p>
                 <Link href={`/${node.slug}`}>{node.title}</Link>
               </p>
               {node.children && node.children.length > 0 && (
-                <ul className={styles.siteMapPageList}>
+                <ul className={styles.siteMapInnerList}>
                   {node.children.map((page) => (
                     <li key={page.slug}>
                       <p>

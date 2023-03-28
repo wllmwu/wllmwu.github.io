@@ -18,6 +18,20 @@
   position: relative;
 }
 
+@media (max-width: 960px) {
+  .showcaseGrid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .showcaseBox {
+    width: 100%;
+    max-width: 32rem;
+  }
+}
+
 .showcaseThumbnail {
   width: 100%;
   height: auto;
@@ -43,18 +57,5 @@
 .showcaseDescription {
   margin: 0;
   margin-top: 0.25em;
-}
-
-@media (max-width: 960px) {
-  .showcaseGrid {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .showcaseBox {
-    width: 100%;
-    max-width: 32rem;
-  }
+  line-height: 1.375em;
 }

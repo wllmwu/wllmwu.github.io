@@ -1,21 +1,20 @@
-.layoutWrapper {
-  --inner-width: 90%;
-  --inner-max-width: 1024px;
-}
-
 .background {
   background-color: var(--background-color);
   width: 100%;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .background {
+    padding: 0;
+  }
 }
 
 .pageContainer {
   background-color: transparent;
-  width: var(--inner-width);
-  max-width: var(--inner-max-width);
-  margin-left: auto;
-  margin-right: auto;
+  width: var(--content-width);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 .skipLink {

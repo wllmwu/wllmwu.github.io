@@ -12,12 +12,20 @@
   font-size: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .navigationBar {
+    padding: 1rem;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+}
+
 .homeLink {
   color: var(--text-primary-color);
   font-family: var(--body-typeface);
   font-weight: var(--weight-bold);
   white-space: nowrap;
-  padding: 0 0.5rem;
+  padding-right: 1rem;
 }
 
 .homeLink:hover {
@@ -28,8 +36,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  row-gap: 0.5rem;
   align-items: baseline;
-  margin-left: 1rem;
   padding: 0;
   list-style-type: none;
 }
@@ -57,21 +65,4 @@
 
 .topLinkCurrent:hover {
   border-color: var(--accent-color);
-}
-
-@media (max-width: 960px) {
-  .navigationBar {
-    flex-direction: column;
-  }
-
-  .topLinkList {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .navigationBar {
-    font-size: 1rem;
-    padding: 1rem;
-  }
 }

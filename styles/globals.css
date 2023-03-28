@@ -17,6 +17,16 @@
   --weight-semibold: 600;
   --weight-bold: 700;
   --common-border-radius: 8px;
+  --content-width: 90%;
+  --content-max-width: 64rem;
+  --content-padding: 4rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --content-width: 100%;
+    --content-padding: 4%;
+  }
 }
 
 * {
