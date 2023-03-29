@@ -20,11 +20,7 @@ function withAnchor(HeadingElement: HeadingElementType) {
   };
 }
 
-const H1: HeadingElementType = withAnchor(H1Alias);
-const H2: HeadingElementType = withAnchor(H2Alias);
-const H3: HeadingElementType = withAnchor(H3Alias);
-const H4: HeadingElementType = withAnchor(H4Alias);
-
-const Headings = { H1, H2, H3, H4 };
-
-export default Headings;
+export const H1: HeadingElementType = withAnchor(H1Alias);
+export const H2: HeadingElementType = withAnchor(H2Alias);
+export const H3: HeadingElementType = withAnchor(H3Alias);
+export const H4: HeadingElementType = withAnchor(H4Alias);
