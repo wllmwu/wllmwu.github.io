@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Banner from "./Banner";
 import Breadcrumb from "./Breadcrumb";
+import PageIndexer from "./PageIndexer";
 import styles from "../styles/Page.module.css";
 
 interface PageMetadata {
@@ -9,6 +10,7 @@ interface PageMetadata {
   seoTitle?: string;
   hideBanner?: boolean;
   hideBreadcrumb?: boolean;
+  showTOC?: boolean;
 }
 
 interface PageProps {
@@ -26,7 +28,9 @@ function Page({ metadata, children }: PageProps) {
       </Head>
       {!metadata.hideBanner && <Banner title={metadata.title} />}
       {!metadata.hideBreadcrumb && <Breadcrumb />}
-      <div className={styles.content}>{children}</div>
+      <PageIndexer enabled={metadata.showTOC ?? false}>
+        <div className={styles.content}>{children}</div>
+      </PageIndexer>
     </div>
   );
 }
