@@ -152,7 +152,7 @@ const pageDefaultExportNode = (data) => ({
 /**
  * @type {import("unified").Plugin<any[], import("mdast").Root, import("mdast").Root>}
  */
-const frontmatterCompiler = () => (root) => {
+const pageCompiler = () => (root) => {
   if (root.children.length === 0) {
     return;
   }
@@ -168,4 +168,4 @@ const frontmatterCompiler = () => (root) => {
   root.children.push(pageComponentImportNode, pageDefaultExportNode(data));
 };
 
-export default frontmatterCompiler;
+export default pageCompiler;
