@@ -31,6 +31,9 @@ function Page({ metadata, children }: PageProps) {
       <PageIndexer enabled={metadata.showTOC ?? false}>
         <div className={styles.content}>{children}</div>
       </PageIndexer>
+      <div className={styles.backToTopBox}>
+        <a href="#">Back to top</a>
+      </div>
     </div>
   );
 }
