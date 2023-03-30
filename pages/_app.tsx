@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { Headings, Layout } from "#components";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
+  /*return (
     <MDXProvider
       components={{
         h1: Headings.H1,
@@ -17,6 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
     </MDXProvider>
+  );*/
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 

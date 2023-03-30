@@ -150,9 +150,71 @@ const pageDefaultExportNode = (data) => ({
 });
 
 /**
+ * @type {(node: import("mdast").Content) => string}
+ */
+const stringifyContentNode = (node) => {
+  if ("children" in node) {
+    return node.children.reduce(
+      (accumulator, current) => accumulator + stringifyContentNode(current),
+      ""
+    );
+  } else if ("value" in node) {
+    return node.value;
+  }
+  return "";
+};
+
+/**
+ * @type {(str: string) => string}
+ */
+const slugify = (str) =>
+  str
+    .trim()
+    .normalize("NFD")
+    .toLowerCase()
+    .replaceAll(/[\s\-\u2013\u2014]+/g, "-")
+    .replaceAll(/[^a-z0-9_\-.]/g, "");
+
+/**
+ * @type {(node: import("mdast").Heading) => import("mdast-util-mdx-jsx").MdxJsxFlowElement}
+ */
+const headingWithAnchor = (node) => {
+  const { depth, children } = node;
+  const title = stringifyContentNode(node);
+  const slug = slugify(title);
+  return {
+    type: "mdxJsxFlowElement",
+    name: `h${depth}`,
+    attributes: [{ type: "mdxJsxAttribute", name: "id", value: slug }],
+    children: [
+      ...children,
+      {
+        type: "mdxJsxTextElement",
+        name: "a",
+        attributes: [{ type: "mdxJsxAttribute", name: "href", value: `#${slug}` }],
+        children: [{ type: "text", value: "#" }],
+      },
+    ],
+  };
+};
+
+/**
+ * @type {(root: import("mdast").Root) => void}
+ */
+export const transformHeadings = (root) => {
+  for (let i = 0; i < root.children.length; i++) {
+    const child = root.children[i];
+    if (child.type === "heading") {
+      root.children[i] = headingWithAnchor(child);
+    }
+  }
+};
+
+/**
  * @type {import("unified").Plugin<any[], import("mdast").Root, import("mdast").Root>}
  */
 const pageCompiler = () => (root) => {
+  // console.log(JSON.stringify(root));
   if (root.children.length === 0) {
     return;
   }
@@ -165,6 +227,7 @@ const pageCompiler = () => (root) => {
   if (typeof data !== "object" || data === null) {
     throw new Error(`Expected frontmatter to describe an object, but got ${node.value}`);
   }
+  transformHeadings(root);
   root.children.push(pageComponentImportNode, pageDefaultExportNode(data));
 };
 
