@@ -1,6 +1,5 @@
 export { default as Card } from "./Card";
 export { default as CardList } from "./CardList";
-export * as Headings from "./Headings";
 export { default as Image, AppIconImage, AppScreenshotImage } from "./Image";
 export { default as ImageCarousel } from "./ImageCarousel";
 export { default as Layout } from "./Layout";

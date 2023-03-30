@@ -1,5 +1,5 @@
 import React from "react";
-import type { IndexItem } from "../utils/IndexContext";
+import type { IndexItem } from "../utils";
 import styles from "../styles/TableOfContents.module.css";
 
 export interface TableOfContentsProps {

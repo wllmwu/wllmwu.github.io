@@ -176,12 +176,9 @@ const slugify = (str) =>
     .replaceAll(/[^a-z0-9_\-.]/g, "");
 
 /**
- * @type {(node: import("mdast").Heading) => import("mdast-util-mdx-jsx").MdxJsxFlowElement}
+ * @type {(slug: string, depth: number, children: import("mdast").Content) => import("mdast-util-mdx-jsx").MdxJsxFlowElement}
  */
-const headingWithAnchor = (node) => {
-  const { depth, children } = node;
-  const title = stringifyContentNode(node);
-  const slug = slugify(title);
+const headingWithAnchor = (slug, depth, children) => {
   return {
     type: "mdxJsxFlowElement",
     name: `h${depth}`,
@@ -199,22 +196,31 @@ const headingWithAnchor = (node) => {
 };
 
 /**
- * @type {(root: import("mdast").Root) => void}
+ * @type {(root: import("mdast").Root) => import(".").IndexItem[]}
  */
-export const transformHeadings = (root) => {
+export const processHeadings = (root) => {
+  /** @type {import(".").IndexItem[]} */
+  const indexList = [];
   for (let i = 0; i < root.children.length; i++) {
-    const child = root.children[i];
-    if (child.type === "heading") {
-      root.children[i] = headingWithAnchor(child);
+    const node = root.children[i];
+    if (node.type === "heading") {
+      const title = stringifyContentNode(node);
+      const slug = slugify(title);
+      root.children[i] = headingWithAnchor(slug, node.depth, node.children);
+      let list = indexList;
+      while (list.length > 0 && list[list.length - 1].depth < node.depth) {
+        list = list[list.length - 1].children;
+      }
+      list.push({ title, slug, depth: node.depth, children: [] });
     }
   }
+  return indexList;
 };
 
 /**
  * @type {import("unified").Plugin<any[], import("mdast").Root, import("mdast").Root>}
  */
 const pageCompiler = () => (root) => {
-  // console.log(JSON.stringify(root));
   if (root.children.length === 0) {
     return;
   }
@@ -227,7 +233,10 @@ const pageCompiler = () => (root) => {
   if (typeof data !== "object" || data === null) {
     throw new Error(`Expected frontmatter to describe an object, but got ${node.value}`);
   }
-  transformHeadings(root);
+  const contentIndex = processHeadings(root);
+  if (data.showTOC) {
+    data.contentIndex = contentIndex;
+  }
   root.children.push(pageComponentImportNode, pageDefaultExportNode(data));
 };
 

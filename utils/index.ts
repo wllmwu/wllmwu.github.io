@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
+export interface IndexItem {
+  title: string;
+  slug: string;
+  depth: number;
+  children: IndexItem[];
+}
+
 export const trimSlashes: (path: string) => string = (path) => {
   const matches = path.match(/[^/].*[^/]/g);
   if (matches) {
