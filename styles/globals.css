@@ -125,6 +125,12 @@ aside {
   color: var(--text-secondary-color);
 }
 
+@media (max-width: 768px) {
+  aside {
+    margin-right: 1em;
+  }
+}
+
 blockquote {
   margin: 1em 0;
   padding-left: 1em;
