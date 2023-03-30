@@ -21,6 +21,7 @@ export const combineClasses: (...classNames: Array<string | null | undefined>) =
   return classNames.filter((value) => value).join(" ");
 };
 
+// currently unused
 export const stringifyReactNode: (node: ReactNode) => string = (node) => {
   if (typeof node === "string") {
     return node;
@@ -43,13 +44,4 @@ export const stringifyReactNode: (node: ReactNode) => string = (node) => {
     }
   }
   return "";
-};
-
-export const slugify: (s: string) => string = (s) => {
-  return s
-    .trim()
-    .normalize("NFD")
-    .toLowerCase()
-    .replaceAll(/[\s\-\u2013\u2014]+/g, "-")
-    .replaceAll(/[^a-z0-9_\-.]/g, "");
 };
