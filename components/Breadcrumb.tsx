@@ -26,10 +26,14 @@ function Breadcrumb() {
       {pathNodes.map((node, index) => (
         <React.Fragment key={node.slug}>
           <a
-            href={`${pathNodes
-              .slice(0, index + 1)
-              .map((n) => n.slug)
-              .join("/")}`}
+            href={
+              index === 0
+                ? "/"
+                : `${pathNodes
+                    .slice(0, index + 1)
+                    .map((n) => n.slug)
+                    .join("/")}`
+            }
           >
             {node.title}
           </a>
