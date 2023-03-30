@@ -40,10 +40,6 @@
   }
 }
 
-.siteMap p {
-  margin: 0;
-}
-
 .siteMapItem {
   break-inside: avoid;
 }

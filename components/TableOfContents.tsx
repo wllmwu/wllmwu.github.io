@@ -1,5 +1,6 @@
 import React from "react";
 import type { IndexItem } from "../utils/IndexContext";
+import styles from "../styles/TableOfContents.module.css";
 
 export interface TableOfContentsProps {
   items: IndexItem[];
@@ -20,8 +21,8 @@ function IndexList({ items }: TableOfContentsProps) {
 
 function TableOfContents({ items }: TableOfContentsProps) {
   return (
-    <div>
-      <p>Contents</p>
+    <div id="table-of-contents" className={styles.tableOfContents}>
+      <p className={styles.tocTitle}>Contents</p>
       <IndexList items={items} />
     </div>
   );

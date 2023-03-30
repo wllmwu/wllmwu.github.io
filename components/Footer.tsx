@@ -15,16 +15,12 @@ function Footer() {
         <ul className={styles.siteMap}>
           {siteMap.map((node) => (
             <li key={node.slug} className={styles.siteMapItem}>
-              <p>
-                <a href={`/${node.slug}`}>{node.title}</a>
-              </p>
+              <a href={`/${node.slug}`}>{node.title}</a>
               {node.children && node.children.length > 0 && (
                 <ul className={styles.siteMapInnerList}>
                   {node.children.map((page) => (
                     <li key={page.slug}>
-                      <p>
-                        <a href={`/${node.slug}/${page.slug}`}>{page.title}</a>
-                      </p>
+                      <a href={`/${node.slug}/${page.slug}`}>{page.title}</a>
                     </li>
                   ))}
                 </ul>
