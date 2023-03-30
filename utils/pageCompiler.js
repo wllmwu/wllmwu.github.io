@@ -150,9 +150,77 @@ const pageDefaultExportNode = (data) => ({
 });
 
 /**
+ * @type {(node: import("mdast").Content) => string}
+ */
+const stringifyContentNode = (node) => {
+  if ("children" in node) {
+    return node.children.reduce(
+      (accumulator, current) => accumulator + stringifyContentNode(current),
+      ""
+    );
+  } else if ("value" in node) {
+    return node.value;
+  }
+  return "";
+};
+
+/**
+ * @type {(str: string) => string}
+ */
+const slugify = (str) =>
+  str
+    .trim()
+    .normalize("NFD")
+    .toLowerCase()
+    .replaceAll(/[\s\-\u2013\u2014]+/g, "-")
+    .replaceAll(/[^a-z0-9_\-.]/g, "");
+
+/**
+ * @type {(slug: string, depth: number, children: import("mdast").Content) => import("mdast-util-mdx-jsx").MdxJsxFlowElement}
+ */
+const headingWithAnchor = (slug, depth, children) => {
+  return {
+    type: "mdxJsxFlowElement",
+    name: `h${depth}`,
+    attributes: [{ type: "mdxJsxAttribute", name: "id", value: slug }],
+    children: [
+      ...children,
+      {
+        type: "mdxJsxTextElement",
+        name: "a",
+        attributes: [{ type: "mdxJsxAttribute", name: "href", value: `#${slug}` }],
+        children: [{ type: "text", value: "#" }],
+      },
+    ],
+  };
+};
+
+/**
+ * @type {(root: import("mdast").Root) => import(".").IndexItem[]}
+ */
+export const processHeadings = (root) => {
+  /** @type {import(".").IndexItem[]} */
+  const indexList = [];
+  for (let i = 0; i < root.children.length; i++) {
+    const node = root.children[i];
+    if (node.type === "heading") {
+      const title = stringifyContentNode(node);
+      const slug = slugify(title);
+      root.children[i] = headingWithAnchor(slug, node.depth, node.children);
+      let list = indexList;
+      while (list.length > 0 && list[list.length - 1].depth < node.depth) {
+        list = list[list.length - 1].children;
+      }
+      list.push({ title, slug, depth: node.depth, children: [] });
+    }
+  }
+  return indexList;
+};
+
+/**
  * @type {import("unified").Plugin<any[], import("mdast").Root, import("mdast").Root>}
  */
-const frontmatterCompiler = () => (root) => {
+const pageCompiler = () => (root) => {
   if (root.children.length === 0) {
     return;
   }
@@ -165,7 +233,11 @@ const frontmatterCompiler = () => (root) => {
   if (typeof data !== "object" || data === null) {
     throw new Error(`Expected frontmatter to describe an object, but got ${node.value}`);
   }
+  const contentIndex = processHeadings(root);
+  if (data.showTOC) {
+    data.contentIndex = contentIndex;
+  }
   root.children.push(pageComponentImportNode, pageDefaultExportNode(data));
 };
 
-export default frontmatterCompiler;
+export default pageCompiler;

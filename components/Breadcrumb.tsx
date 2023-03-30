@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { trimSlashes } from "../utils";
 import type { SiteNode } from "../utils/navigation";
 import { siteMap } from "../utils/navigation";
@@ -26,14 +25,18 @@ function Breadcrumb() {
     <span className={styles.breadcrumbs}>
       {pathNodes.map((node, index) => (
         <React.Fragment key={node.slug}>
-          <Link
-            href={`${pathNodes
-              .slice(0, index + 1)
-              .map((n) => n.slug)
-              .join("/")}`}
+          <a
+            href={
+              index === 0
+                ? "/"
+                : `${pathNodes
+                    .slice(0, index + 1)
+                    .map((n) => n.slug)
+                    .join("/")}`
+            }
           >
             {node.title}
-          </Link>
+          </a>
           {index < pathNodes.length - 1 && " / "}
         </React.Fragment>
       ))}

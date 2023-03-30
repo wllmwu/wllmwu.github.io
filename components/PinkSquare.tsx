@@ -6,7 +6,7 @@ function PinkSquare() {
     <div
       style={{
         position: "fixed",
-        right: 32,
+        left: 32,
         bottom: 32,
         width: 32,
         height: 32,

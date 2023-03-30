@@ -1,5 +1,5 @@
 .breadcrumbs {
-  padding: 2rem var(--content-padding) 0;
+  margin: 2rem var(--content-padding) 0;
   font-family: var(--heading-typeface);
   font-size: 1.25rem;
   font-weight: var(--weight-medium);

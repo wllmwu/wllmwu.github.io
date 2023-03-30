@@ -1,7 +1,9 @@
 import React from "react";
 import Head from "next/head";
+import type { IndexItem } from "../utils";
 import Banner from "./Banner";
 import Breadcrumb from "./Breadcrumb";
+import TableOfContents from "./TableOfContents";
 import styles from "../styles/Page.module.css";
 
 interface PageMetadata {
@@ -9,6 +11,8 @@ interface PageMetadata {
   seoTitle?: string;
   hideBanner?: boolean;
   hideBreadcrumb?: boolean;
+  showTOC?: boolean;
+  contentIndex?: IndexItem[];
 }
 
 interface PageProps {
@@ -26,7 +30,13 @@ function Page({ metadata, children }: PageProps) {
       </Head>
       {!metadata.hideBanner && <Banner title={metadata.title} />}
       {!metadata.hideBreadcrumb && <Breadcrumb />}
+      {metadata.showTOC && metadata.contentIndex && (
+        <TableOfContents items={metadata.contentIndex} />
+      )}
       <div className={styles.content}>{children}</div>
+      <div className={styles.backToTopBox}>
+        <a href="#">Back to top</a>
+      </div>
     </div>
   );
 }

@@ -22,13 +22,13 @@
 }
 
 .appIcon {
-  border: 1px solid var(--highlight-color);
+  border: 1px solid var(--line-color);
   border-radius: 25%;
   box-sizing: content-box;
 }
 
 .appScreenshot {
   display: inline-block;
-  border: 1px solid var(--highlight-color);
+  border: 1px solid var(--line-color);
   box-sizing: content-box;
 }

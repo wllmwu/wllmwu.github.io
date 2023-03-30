@@ -1,11 +1,11 @@
 :root {
-  --background-color: #f0f0f0;
+  --background-color: #e8e8e8;
   --content-background-color: #fff;
   --content-overlay-color: #ffffffe8;
   --text-primary-color: #000;
-  --text-secondary-color: #b0b0b0;
-  --accent-color: #00b0f0;
-  --highlight-color: #e0e0e0;
+  --text-secondary-color: #727272;
+  --accent-color: #0070a0;
+  --line-color: #c0c0c0;
   --shadow-color: #00000030;
   --body-typeface: "Noto Serif", Georgia, "Times New Roman", Times, serif;
   --heading-typeface: "Barlow Semi Condensed", Helvetica, Arial, sans-serif;
@@ -35,6 +35,10 @@
   margin: 0;
 }
 
+:target {
+  scroll-margin-top: 8rem;
+}
+
 html,
 body {
   font-family: var(--body-typeface);
@@ -55,16 +59,17 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  border-bottom: 3px solid var(--highlight-color);
+  border-bottom: 3px solid var(--line-color);
 }
 
 h2 {
   font-size: 1.75rem;
-  border-bottom: 2px solid var(--highlight-color);
+  border-bottom: 2px solid var(--line-color);
 }
 
 h3 {
   font-size: 1.5rem;
+  border-bottom: 1px solid var(--line-color);
 }
 
 h4 {
@@ -79,9 +84,17 @@ h6 {
   font-size: 0.75rem;
 }
 
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  margin-left: 0.25em;
+}
+
 p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 0.5em 0;
   line-height: 1.5;
 }
 
@@ -103,9 +116,23 @@ a:hover {
   text-underline-offset: 0.125em;
 }
 
+aside {
+  margin-left: 1em;
+  margin-right: 8em;
+  padding: 0 0.75em;
+  border: 2px solid var(--line-color);
+  border-radius: var(--common-border-radius);
+  color: var(--text-secondary-color);
+}
+
+@media (max-width: 768px) {
+  aside {
+    margin-right: 1em;
+  }
+}
+
 blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em 0;
   padding-left: 1em;
   border-left: 4px solid var(--text-secondary-color);
   color: var(--text-secondary-color);
@@ -113,16 +140,15 @@ blockquote {
 
 code {
   font-family: var(--code-typeface);
-  background-color: var(--highlight-color);
+  background-color: var(--line-color);
   padding: 0.0625em 0.25em;
   border-radius: 0.25em;
 }
 
 pre {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  max-width: 66em;
-  background-color: var(--highlight-color);
+  margin: 0.5em 0;
+  max-width: 64em;
+  background-color: var(--line-color);
   padding: 0.5em 1em;
   border-radius: 0.75em;
   overflow-x: auto;

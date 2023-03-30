@@ -1,6 +1,6 @@
 import mdxConfig from "@next/mdx";
 import remarkFrontmatter from "remark-frontmatter";
-import frontmatterCompiler from "./utils/frontmatterCompiler.js";
+import pageCompiler from "./utils/pageCompiler.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,7 +14,7 @@ const nextConfig = {
 const withMDX = mdxConfig({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, frontmatterCompiler],
+    remarkPlugins: [remarkFrontmatter, pageCompiler],
     rehypePlugins: [],
   },
 });
