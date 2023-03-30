@@ -1,8 +1,15 @@
+.image {
+  display: block;
+  box-sizing: content-box;
+  border: 1px solid var(--line-color);
+  border-radius: var(--common-border-radius);
+}
+
 .carousel {
   width: 100%;
   height: auto;
   margin: 1rem 0;
-  padding: 1rem 0;
+  padding: 1rem 0.25rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -15,20 +22,11 @@
 .carousel .image {
   max-width: 90%;
   height: auto;
-}
-
-.image {
-  display: block;
+  display: inline-block;
 }
 
 .appIcon {
   border: 1px solid var(--line-color);
   border-radius: 25%;
-  box-sizing: content-box;
-}
-
-.appScreenshot {
-  display: inline-block;
-  border: 1px solid var(--line-color);
   box-sizing: content-box;
 }
