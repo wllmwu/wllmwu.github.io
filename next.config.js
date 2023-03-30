@@ -16,7 +16,6 @@ const withMDX = mdxConfig({
   options: {
     remarkPlugins: [remarkFrontmatter, pageCompiler],
     rehypePlugins: [],
-    // providerImportSource: "@mdx-js/react",
   },
 });
 
