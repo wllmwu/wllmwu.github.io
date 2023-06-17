@@ -35,6 +35,10 @@ export const siteMap: SiteNode[] = [
         slug: "tse",
         title: "Triton Software Engineering",
       },
+      {
+        slug: "raytracer",
+        title: "Computer Graphics Raytracer",
+      },
     ],
   },
   {
