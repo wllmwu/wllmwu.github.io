@@ -15,5 +15,11 @@ module.exports = {
   rules: {
     "no-console": 1,
   },
-  ignorePatterns: ["out/*"],
+  ignorePatterns: ["out/*", ".eslintrc.cjs"],
+  overrides: [
+    {
+      files: ["*.js"],
+      extends: ["plugin:@typescript-eslint/disable-type-checked"],
+    },
+  ],
 };
