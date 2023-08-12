@@ -9,7 +9,7 @@ function PageRedirect({ destination }: PageRedirectProps) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(destination);
+    void router.push(destination);
   }, [router, destination]);
 
   return <p>Redirecting&hellip;</p>;
