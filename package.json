@@ -23,7 +23,7 @@
     "remark-frontmatter": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.15",
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
