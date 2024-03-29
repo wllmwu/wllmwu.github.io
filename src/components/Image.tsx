@@ -1,7 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-
-import React from "react";
-import { combineClasses } from "../utils";
+import classNames from "classnames";
 import styles from "../styles/Image.module.css";
 
 interface ImageProps {
@@ -20,7 +17,7 @@ function Image({ source, width, height, alt, className }: ImageProps) {
       decoding="async"
       width={width}
       height={height}
-      className={combineClasses(styles.image, className)}
+      className={classNames(styles.image, className)}
     />
   );
 }
@@ -32,7 +29,15 @@ interface AppIconImageProps {
 }
 
 export function AppIconImage({ source, size, alt }: AppIconImageProps) {
-  return <Image source={source} width={size} height={size} alt={alt} className={styles.appIcon} />;
+  return (
+    <Image
+      source={source}
+      width={size}
+      height={size}
+      alt={alt}
+      className={styles.appIcon}
+    />
+  );
 }
 
 export default Image;

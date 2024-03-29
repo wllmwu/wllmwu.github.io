@@ -1,9 +1,7 @@
 import React from "react";
-import Head from "next/head";
-import type { IndexItem } from "../utils";
+import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
-import Breadcrumb from "./Breadcrumb";
-import TableOfContents from "./TableOfContents";
+import Breadcrumb from "./Breadcrumbs";
 import styles from "../styles/Page.module.css";
 
 interface PageMetadata {
@@ -12,7 +10,6 @@ interface PageMetadata {
   hideBanner?: boolean;
   hideBreadcrumb?: boolean;
   showTOC?: boolean;
-  contentIndex?: IndexItem[];
 }
 
 interface PageProps {
@@ -25,14 +22,11 @@ const formatPageTitle = (pageTitle: string) => `${pageTitle} | William Wu`;
 function Page({ metadata, children }: PageProps) {
   return (
     <div className={styles.page}>
-      <Head>
+      <Helmet>
         <title>{formatPageTitle(metadata.seoTitle ?? metadata.title)}</title>
-      </Head>
+      </Helmet>
       {!metadata.hideBanner && <Banner title={metadata.title} />}
       {!metadata.hideBreadcrumb && <Breadcrumb />}
-      {metadata.showTOC && metadata.contentIndex && (
-        <TableOfContents items={metadata.contentIndex} />
-      )}
       <div className={styles.content}>{children}</div>
       <div className={styles.backToTopBox}>
         <a href="#">Back to top</a>

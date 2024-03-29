@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function PinkSquare() {
   const [isHovered, setHovered] = useState(false);

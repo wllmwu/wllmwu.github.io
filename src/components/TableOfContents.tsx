@@ -1,6 +1,11 @@
-import React from "react";
-import type { IndexItem } from "../utils";
 import styles from "../styles/TableOfContents.module.css";
+
+export interface IndexItem {
+  title: string;
+  slug: string;
+  depth: number;
+  children: IndexItem[];
+}
 
 export interface TableOfContentsProps {
   items: IndexItem[];

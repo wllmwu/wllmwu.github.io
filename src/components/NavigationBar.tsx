@@ -1,31 +1,43 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { combineClasses, trimSlashes } from "../utils";
-import { siteMap } from "../utils/navigation";
+import { Link, useLocation } from "react-router-dom";
+import classNames from "classnames";
 import styles from "../styles/NavigationBar.module.css";
 
+interface NavBarLink {
+  title: string;
+  to: string;
+}
+
+const navBarLinks: NavBarLink[] = [
+  { title: "Home", to: "/" },
+  { title: "About", to: "/about" },
+  { title: "Apps", to: "/apps" },
+  { title: "Projects", to: "/projects" },
+  { title: "Resources", to: "/resources" },
+  { title: "Contact", to: "/contact" },
+];
+
 function NavigationBar() {
-  const router = useRouter();
-  const currentPath = trimSlashes(router.pathname).split("/");
-  const currentBase = currentPath.length > 0 ? currentPath[0] : "";
+  const location = useLocation();
+  const currentPath = location.pathname.split("/");
+  const currentBase = currentPath.length > 0 ? currentPath[1] : "";
 
   return (
     <nav className={styles.navigationBar}>
-      <a href="/" className={styles.homeLink}>
+      <Link to="/" className={styles.homeLink}>
         William Wu
-      </a>
+      </Link>
       <menu className={styles.topLinkList}>
-        {siteMap.map((node) => (
-          <li key={node.slug} className={styles.topLinkItem}>
-            <a
-              href={`/${node.slug}`}
-              className={combineClasses(
+        {navBarLinks.map((link) => (
+          <li key={link.to} className={styles.topLinkItem}>
+            <Link
+              to={link.to}
+              className={classNames(
                 styles.topLink,
-                currentBase === node.slug ? styles.topLinkCurrent : null
+                currentBase === link.to ? styles.topLinkCurrent : null
               )}
             >
-              {node.title.toUpperCase()}
-            </a>
+              {link.title.toUpperCase()}
+            </Link>
           </li>
         ))}
       </menu>
