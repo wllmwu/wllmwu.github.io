@@ -1,25 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React + TypeScript + Vite
 
-## Getting started
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-First, run the development server:
+Currently, two official plugins are available:
 
-```bash
-npm run dev
-# or
-yarn dev
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Adding pages
-
-The following file types are supported: `.js`, `.jsx`, `.ts`, `.tsx`, `.md`, and `.mdx`. Markdown files are automatically processed and wrapped into `Page` components (see `components/Page.tsx`), but other types of files should incorporate `Page` into themselves.
-
-Support for YAML-style frontmatter in Markdown files is also implemented. The following metadata are expected (see `components/Page.tsx`):
-
-- `title` (string): The title of the page.
-- `seoTitle` (optional string): The string to use for the page's actual `<title>` tag in its `<head>`. Will be automatically appended with the site name. If not provided, then defaults to the value of `title`.
-- `hideBanner` (optional boolean): Whether to hide the banner at the top of the page. Defaults to `false`.
-- `hideBreadcrumb` (optional boolean): Whether to hide the breadcrumb trail at the top of the page. Defaults to `false`.
-- `showTOC` (optional boolean): Whether to show a table of contents at the top of the page. Defaults to `false`.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
