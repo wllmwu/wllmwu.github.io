@@ -1,0 +1,38 @@
+import Showcase, { ShowcaseGrid } from "../../components/Showcase.tsx";
+
+Check out some projects I've worked on below! These include personal projects
+that I created in my free time, interesting assignments for courses, and
+applications that I developed as part of a team.
+
+<ShowcaseGrid>
+  <Showcase
+    title="UCSD Course Grapher"
+    description="A course planning tool for UCSD students that visualizes course prerequisites as graphs. Built with React and Python."
+    link="/projects/course-grapher"
+    thumbnail={{
+      source: "/images/course-grapher/thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+  <Showcase
+    title="Triton Software Eng"
+    description="Projects for nonprofits that I've worked on as part of a student org at UCSD."
+    link="/projects/tse"
+    thumbnail={{
+      source: "/images/tse/thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+  <Showcase
+    title="Raytracer"
+    description="A raytracing program that I built for an advanced computer graphics course."
+    link="/projects/raytracer"
+    thumbnail={{
+      source: "/images/raytracer/thumbnail.png",
+      width: 480,
+      height: 270,
+    }}
+  />
+</ShowcaseGrid>

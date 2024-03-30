@@ -1,0 +1,46 @@
+import Showcase, { ShowcaseGrid } from "../components/Showcase.tsx";
+
+Hi! I'm a computer science student and software developer. I enjoy learning and making things. Here are some pages on this site that I'd like to feature:
+
+<ShowcaseGrid>
+  <Showcase
+    title="About me"
+    description="Some more information about myself, plus my resume"
+    link="/about"
+    thumbnail={{
+      source: "/images/default-thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+  <Showcase
+    title="UCSD Course Grapher"
+    description="A course planning tool for UCSD students that visualizes course prerequisites as graphs. Built with React and Python."
+    link="/projects/course-grapher"
+    thumbnail={{
+      source: "/images/course-grapher/thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+  <Showcase
+    title="Copy Better"
+    description="A convenient clipboard extension app for storing and organizing clips to paste anywhere, with 14,000+ downloads on the App Store! Built with Swift and Xcode."
+    link="/apps/copy-better"
+    thumbnail={{
+      source: "/images/copy-better/thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+  <Showcase
+    title="Triton Software Eng"
+    description="Projects for nonprofits that I've worked on as part of a student org at UCSD."
+    link="/projects/tse"
+    thumbnail={{
+      source: "/images/tse/thumbnail.png",
+      width: 1067,
+      height: 600,
+    }}
+  />
+</ShowcaseGrid>
