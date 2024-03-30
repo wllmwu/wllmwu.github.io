@@ -12,6 +12,10 @@ export interface ShowcaseProps {
   };
 }
 
+export interface ShowcaseGridProps {
+  children: React.ReactNode;
+}
+
 function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
   return (
     <div className={styles.showcaseBox}>
@@ -32,6 +36,10 @@ function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
       </div>
     </div>
   );
+}
+
+export function ShowcaseGrid({ children }: ShowcaseGridProps) {
+  return <div className={styles.showcaseGrid}>{children}</div>;
 }
 
 export default Showcase;

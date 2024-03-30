@@ -12,14 +12,13 @@ const navBarLinks: NavBarLink[] = [
   { title: "About", to: "/about" },
   { title: "Apps", to: "/apps" },
   { title: "Projects", to: "/projects" },
-  { title: "Resources", to: "/resources" },
   { title: "Contact", to: "/contact" },
 ];
 
 function NavigationBar() {
   const location = useLocation();
   const currentPath = location.pathname.split("/");
-  const currentBase = currentPath.length > 0 ? currentPath[1] : "";
+  const currentBase = currentPath.length > 0 ? `/${currentPath[1]}` : "";
 
   return (
     <nav className={styles.navigationBar}>
