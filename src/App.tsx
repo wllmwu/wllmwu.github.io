@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Footer from "./components/Footer";
 import NavigationBar from "./components/NavigationBar";
-import styles from "./styles/Layout.module.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
