@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import Breadcrumb from "./Breadcrumbs";
 import styles from "../styles/Page.module.css";
@@ -24,9 +23,7 @@ function Page({
 }: PageProps) {
   return (
     <div className={styles.page}>
-      <Helmet>
-        <title>{formatPageTitle(seoTitle ?? title)}</title>
-      </Helmet>
+      <title>{formatPageTitle(seoTitle ?? title)}</title>
       {!hideBanner && <Banner title={title} />}
       {!hideBreadcrumb && <Breadcrumb />}
       <div className={styles.content}>{children}</div>
