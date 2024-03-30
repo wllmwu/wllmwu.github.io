@@ -9,7 +9,7 @@ interface PageProps {
   seoTitle?: string;
   hideBanner?: boolean;
   hideBreadcrumb?: boolean;
-  showTOC?: boolean;
+  showTOC?: boolean; // currently unused
   children: React.ReactNode;
 }
 

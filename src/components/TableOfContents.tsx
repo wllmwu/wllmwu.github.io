@@ -1,3 +1,7 @@
+/*
+This component is currently unused
+*/
+
 import styles from "../styles/TableOfContents.module.css";
 
 export interface IndexItem {
