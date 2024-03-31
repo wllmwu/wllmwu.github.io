@@ -5,7 +5,8 @@ tolint=`git diff --cached --diff-filter=d --name-only --relative \
   | grep -E '\.(js|jsx|ts|tsx)$' | tr '\n' ' '`
 if [ -n "${tolint}" ]
 then
-  npm run lint ${tolint}
+  # npm run lint ${tolint}
+  npm run lint
   if [ "$?" -ne 0 ]
   then
     exit 1

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Image from "./Image";
 import styles from "../styles/Showcase.module.css";
 
@@ -19,7 +20,7 @@ export interface ShowcaseGridProps {
 function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
   return (
     <div className={styles.showcaseBox}>
-      <a href={link} tabIndex={-1}>
+      <Link to={link} tabIndex={-1}>
         <Image
           source={thumbnail.source}
           width={thumbnail.width}
@@ -27,10 +28,10 @@ function Showcase({ title, description, link, thumbnail }: ShowcaseProps) {
           alt={`Go to the ${title} page`}
           className={styles.showcaseThumbnail}
         />
-      </a>
+      </Link>
       <div className={styles.showcaseOverlay}>
         <p className={styles.showcaseTitle}>
-          <a href={link}>{title}</a>
+          <Link to={link}>{title}</Link>
         </p>
         <p className={styles.showcaseDescription}>{description}</p>
       </div>
