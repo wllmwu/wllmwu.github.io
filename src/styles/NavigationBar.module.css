@@ -25,7 +25,7 @@
   font-family: var(--body-typeface);
   font-weight: var(--weight-bold);
   white-space: nowrap;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 
 .homeLink:hover {

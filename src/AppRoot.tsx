@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavigationBar from "./components/NavigationBar";
 import styles from "./AppRoot.module.css";
@@ -6,6 +6,7 @@ import styles from "./AppRoot.module.css";
 function AppRoot() {
   return (
     <div>
+      <ScrollRestoration />
       <a href="#main-content" className={styles.skipLink}>
         Skip to main content
       </a>
