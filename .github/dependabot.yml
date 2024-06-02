@@ -19,4 +19,5 @@ updates:
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
+          - "version-update:semver-patch"
     open-pull-requests-limit: 10
