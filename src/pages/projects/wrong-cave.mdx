@@ -1,0 +1,262 @@
+import Image from "../../components/Image.tsx";
+
+## Introduction
+
+In Spring 2024, I took the course [CSE 125](https://cse125.ucsd.edu) (Software
+System Design and Implementation) with Professor Geoff Voelker. This course
+centers on a single quarter-long team project: the creation of a **distributed
+real-time 3D multiplayer game** in just 10 weeks, culminating in a [live
+demonstration](https://youtube.com/live/LMllEYOQoI8) for an audience of
+department faculty, course alumni, other students, and the public.
+
+As CSE 125 is offered only once a year and space is limited to about 30
+students, the application process prioritizes demonstrated commitment and
+problem-solving ability. (See the [course overview](https://cse125.ucsd.edu/2024/overview.html)
+for more details.) Thus, I'm honored to have been a part of the course and I
+consider it to be one of my most significant experiences at UC San Diego.
+
+Students in the course were separated into five groups. Each group had six
+developers and one artist who worked together on their own unique game from
+concept to implementation. As shown on the [2024 groups page](https://cse125.ucsd.edu/2024/groups.html),
+every game ended up turning into something distinctive and interesting:
+
+- Asymmetric party crafting game (my team's!)
+- Rhythm-based Soulslike boss fight
+- Asymmetric maze dungeon crawler
+- Exploration/collection/stealth game
+- Character ability-based capture-the-flag/domination shooter
+
+The groups page contains links to each group's website and live demo recording.
+From the thumbnails alone, it's clear that the only limit was our imagination!
+
+## My team
+
+I was fortunate to have the following amazing individuals on my team:
+
+- [Kenzo Ku](https://www.kenzoputraku.com)
+- [Nick Petrone](https://github.com/nick-ls)
+- [Tyler Roache](https://ripslash.itch.io)
+- [Marcelo Shen](https://www.marceloshen.dev)
+- Killian To (portfolio link pending)
+- [Sean Yen](https://sheeptester.github.io)
+
+all of whom were supremely talented and a pleasure to work with. Please visit
+[our group page](https://cse125.ucsd.edu/2024/cse125g1/) to see our weekly
+reports, screenshots, [demo video](https://www.youtube.com/watch?v=WR3wl0M94Zk&list=PLbbCsk7MUIGdMpwjGznoc0ooiSoYVyLtU&index=5),
+and live server (plus a showcase of Sean's outstanding web dev skills).
+
+## Our game
+
+_Wrong Cave!_ is a two-stage asymmetric couch co-op crafting game in which a
+team of heroes tries to escape a cave and fight off the Mushroom King who lives
+there. In the first stage, the heroes frantically craft weapons and armor using
+resources collected from around the cave, while a small mushroom minion
+(controlled by another player) sneaks around and sabotages their efforts.
+
+In the second stage, the king breaks free (controlled by whoever played the
+minion) and tries to destroy the heroes or the minecart they need to escape; the
+heroes must protect themselves and the minecart using the weapons they have
+acquired.
+
+The game runs in web browsers, much like the many .io browser games in recent
+years, so there is no need to install anything else to play it. A live instance
+was supposed to run on the [CSE 125 server](http://cse125.ucsd.edu:2345), but it
+currently seems to be shut down.
+
+We aimed to make the hero experience feel _frantic_ and _chaotic_—hero players
+must keep track of several different crafting recipes, throw and chase items
+around the cave, and try to avoid the minion's traps. On the other hand, the
+boss experience is one of being _sneaky,_ _powerful,_ and _in control._
+
+Some of our chief inspirations for the game concept and major design elements
+included:
+
+- [_Overcooked_](https://en.wikipedia.org/wiki/Overcooked) for its gameplay
+  mechanics and chaotic feel (hence our working title of _Undercooked_). Our
+  game could perhaps be summarized as "_Overcooked_ with a boss fight."
+- [_Among Us_](https://en.wikipedia.org/wiki/Among_Us) for its asymmetric roles
+  and sabotage mechanics. Though it wasn't a specific inspiration, our game's
+  aesthetic also features goofy, cartoonish visuals.
+- Games in the [Soulslike genre](https://en.wikipedia.org/wiki/Soulslike) for
+  their large, powerful bosses and highly difficult combat. This became less
+  important as our ideas evolved and we focused more on the crafting aspect of
+  the game (as well as its goofiness), but its influence is still present in the
+  design of our boss character.
+- Web games like [Krunker.io](https://krunker.io) for their simple
+  interface/HUD style and lobby system.
+
+## Tools and technologies
+
+- **[TypeScript](https://www.typescriptlang.org):** Primary source code
+  language.
+  - Our choice of making a web game meant JavaScript and TypeScript were our
+    best options. For large projects like this one, the static type checking
+    that TypeScript provides is crucial for catching mistakes.
+  - Most groups over the years have used the classic combination of C++ and
+    OpenGL. I believe one group so far has used Rust.
+- **[cannon-es](https://pmndrs.github.io/cannon-es/docs/index.html):** Physics
+  engine.
+  - Using this library gave us rigid body motion basically for free, but
+    it came with many caveats that required workarounds. For example, the engine
+    only checks for collisions at an object's current location each tick, not
+    along the line segment from its previous to its current location.
+  - I think that ultimately, we still saved time by using the library instead of
+    rolling our own physics, but I think it would have been a cool experience to
+    write a custom physics engine too.
+- **[WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API):**
+  For rendering 3D graphics in the browser.
+  - Our earliest decision as a team was to use WebGL so that our game could be
+    played in browsers, and having this chance to learn about WebGL was the main
+    reason I joined this group. Fortunately, I and several others already had
+    experience with OpenGL, which is very similar to WebGL—the latter just has a
+    few more limitations.
+  - We found the [WebGL2 Fundamentals](https://webgl2fundamentals.org) website
+    to be pretty helpful. It has tutorials that walk through a large number of
+    topics with plenty of examples.
+- **[glMatrix](https://glmatrix.net):** Vector and matrix math utility library.
+  - Another downside of using cannon-es was that it came with its own
+    implementations of vectors, matrices, and quaternions which were not
+    type-compatible with glMatrix. Since glMatrix offered many operations
+    (particularly ones relevant to graphics) that cannon-es didn't, we often had
+    to convert between the two types which led to some inconsistencies.
+- **[Express](https://expressjs.com)** and **[ws](https://www.npmjs.com/package/ws):**
+  Network communication via the [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+  - In general, large multiplayer games often use custom protocols based on UDP
+    connections to reduce bandwidth usage. Because we use a set of locally
+    connected machines with high bandwidth and low latency for the final demo in
+    this course, students can just use TCP connections and less
+    compressed/optimized data structures for transmitting game states.
+  - For our group in particular, since we were making a web game, UDP wasn't an
+    option to begin with (browsers only allow TCP). We also got a lot of
+    functionality basically for free from JS/TS—for example, JSON data
+    marshalling is built into the language.
+- Other APIs: **[Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)**
+  for sounds, **HTML/CSS** for user interface.
+  - As with some other parts of the stack, we got these for free because all
+    modern browsers provide them.
+- Development tools: **[npm](https://www.npmjs.com)** for package management,
+  **[esbuild](https://esbuild.github.io)** for bundling (very fast), **[ESLint](https://eslint.org)**
+  for code linting, **[Prettier](https://prettier.io)** for code formatting, and
+  of course **[Git](https://git-scm.com)** for version control.
+  - The linting was pretty minimal because some members of the team didn't like
+    using a linter. I basically learned JS/TS with the recommended ruleset so
+    don't find it obtrusive, but we ended up turning off most rules to save time
+    for others who weren't accustomed.
+- **[Blender](https://www.blender.org):** 3D modeling and texturing.
+  - We exported our models as **[glTF](https://www.khronos.org/gltf/)** files to
+    make them easy to process—this format is designed to work well with WebGL
+    and OpenGL.
+
+## Our journey
+
+For a more in-depth chronicle of our game development journey, please see our
+project specification, weekly reports, and final review on [our group page](https://cse125.ucsd.edu/2024/cse125g1/).
+I'll summarize our weekly progress here:
+
+- **Week 1:** We held a long meeting to nail down some game design elements.
+  - The core gameplay loop remained basically the same for the rest of the
+    quarter: three players craft weapons on a timer while a fourth player
+    sabotages them, then the fourth becomes a boss and they battle each other.
+  - We knew from the beginning that we wanted to use WebGL so the game could be
+    played in browsers, even if this meant sacrificing some performance.
+  - We left several elements (aesthetics, story, certain mechanics such as
+    exactly how crafting would work, etc.) intentionally undecided, to return to
+    them later; we needed to investigate things like JavaScript physics
+    libraries and the performance implications of dynamic lighting first.
+- **Week 2:** Concept art; basic physics simulation on the server; camera set up
+  and rendering physics objects and static textured meshes on the client.
+- **Week 3:** More concept art; discussion of server code architecture/logic
+  organization; exploration of various lighting and shading models (point lights
+  with shadows, cel shading).
+- **Week 4:** Processing player inputs and translating to movement; shader
+  pipeline to allow postprocessing steps; first-person camera and freecam mode;
+  placeholder models; basic particle system; team social.
+  - This was the first key milestone of the project: a client that sends inputs
+    to a server, which responds with an updated game state that the client
+    renders.
+- **Week 5:** Collision detection through the physics engine; 2D outline and cel
+  shaders; the first of many object models.
+- **Week 6:** Picking up items; parsing triangle mesh collider from object file
+  (used for generating the map's collision mesh).
+- **Week 7:** Support for multiple players; throwing items; recipe crafting
+  system; revamped player movement system; revamped map collider parsing (using
+  boxes instead of a triangle mesh because the latter didn't work very well);
+  boss minion character; _lots_ of new models.
+  - Our team morale was the lowest around this point in the quarter. It seemed
+    like every week, we discovered more new tasks than we completed old ones,
+    and the game was still more of a sandbox engine than a game where each
+    player has a goal and a way to win or lose.
+  - I think we didn't know enough about the tools and game elements yet to
+    properly plan out our requirements early on, so having this experience
+    seems helpful for avoiding that kind of situation in the future.
+- **Week 8:** Sound effects; crafting stations and resource spawners; boss
+  sabotage mechanics (blinding and setting traps); lighting fixes; revamped
+  particle system; first playtests with most of the team.
+  - Half of the team got sick during this week, sadly. But we pulled through!
+  - As every game developer knows, playtests were hugely helpful for identifying
+    high-priority issues that intruded on the player experience. We continued
+    playtesting and tuning often in the run-up to the demo.
+- **Week 9:** Game stages and win conditions; combat system; in-game text
+  rendering; user interface; final game map; even more models; simple animation
+  system; more sound effects.
+  - At this point, there was a way to _win,_ so we finally had a true game.
+  - The game itself had also become a _platform_—all our work on physics,
+    graphics, networking, controls, game objects, etc. created foundational
+    infrastructure on which we could quickly build and iterate new features and
+    interactions.
+  - For example, we thought that a combat system would take multiple weeks to
+    build, so we were planning to first implement a simpler (from the players'
+    perspective) version which was essentially a clicking contest between heroes
+    and boss. However, we really wanted to push for real in-game combat, and it
+    actually turned out to be relatively easy to achieve thanks to the
+    aforementioned platform. That is, instead of needing to build it from the
+    ground up, we just had to add on to existing systems like item interaction.
+- **Week 10:** Big boss character; full two-stage game sequence; polished UI,
+  lobby, and lighting; ability to correctly restart the game; in-game crafting
+  recipe guides; particles, camera shake, and other "juicy" effects; many small
+  features, fixes, optimizations, and quality-of-life changes; final demo!
+  - As tends to happen in these situations, the majority of this work occurred
+    in the 24 hours before the demo ([nearly 200 of our ~700 commits!](https://github.com/ucsd-cse125-sp24/group1/commits/main/?since=2024-06-06&until=2024-06-07)).
+    We didn't even procrastinate, having made pretty steady progress all
+    quarter, but there was just that much left to do.
+  - The final demo went smoothly and we got to show off most of the interesting
+    mechanics we created, as well as some of our debugging features. And of
+    course, one or two known bugs that remained. It was a great finale to a
+    great quarter.
+
+## Takeaways
+
+- **The importance of task tracking:** We mainly tracked our work informally by
+  discussing what we had done/were going to do at our weekly meetings. I think
+  we all wanted to focus on getting things done with minimal overhead,
+  especially with no official "person in charge." But on several occasions, we
+  accidentally did duplicate work or forgot about an important task. Some other
+  groups used GitHub Issues and I also use them a lot personally, so such a
+  system could have helped us save some time.
+  - Incidentally, we also didn't use Git branches much. Early on this made sense
+    because we were working on low-level building blocks of the project that
+    couldn't easily be separated. Later, though, it possibly might have helped
+    make things cleaner.
+- **The importance of being present:** I made an effort to show up to every
+  meeting in-person that I could. But I don't mean to call out anyone who missed
+  a couple meetings; this point is more about the effort part, and I think all
+  of my team members similarly tried their best to make ourselves a cohesive
+  unit. That meant being responsive to messages, contributing ideas, asking
+  questions, and listening to feedback, because we all were passionate about the
+  project and had the same goal. And the best parts of the quarter to me were
+  the times when we were together as a team, whether hammering out some new code
+  at a meeting or getting food at the local mall.
+- **The importance of making well-reasoned product decisions:** From the start
+  of the project, our discussions often revolved around the experience we wanted
+  to create for players and ways to achieve that experience. (_The Art of Game
+  Design_ by Jesse Schell describes this kind of approach.) We generated many,
+  many different ideas over the course of 10 weeks, but we always made sure to
+  examine them through that lens (and some others, such as "is it feasible to
+  implement?" or "will it impact performance?"). I think this approach helped
+  make our game feel more cohesive, as everything in it had a purpose.
+- **The importance of cleaning up after yourself:** WebGL and OpenGL have a lot
+  of different types of buffers and bindings. One common and hard-to-debug issue
+  that we encountered was forgetting to unbind/clean up everything at the end
+  of a function or block. If something is left behind and is still there during
+  the next WebGL operation, it's likely to create some kind of invalid state and
+  you get a nonspecific warning or error.

@@ -12,6 +12,7 @@ import ProjectsPage from "./pages/projects/index.mdx";
 import CourseGrapherPage from "./pages/projects/course-grapher.mdx";
 import TSEPage from "./pages/projects/tse.mdx";
 import RaytracerPage from "./pages/projects/raytracer.mdx";
+import WrongCavePage from "./pages/projects/wrong-cave.mdx";
 import ContactPage from "./pages/contact.mdx";
 import PrivacyPage from "./pages/privacy/index.mdx";
 import MKPrivacyPage from "./pages/privacy/math-keeper.mdx";
@@ -170,6 +171,20 @@ export const routes: RouteObject[] = [
             ),
             handle: {
               crumb: () => <Link to="/projects/raytracer">Raytracer</Link>,
+            },
+          },
+          {
+            path: "/projects/wrong-cave",
+            element: (
+              <Page
+                title="Wrong Cave!"
+                seoTitle={"Projects \u2013 Wrong Cave!"}
+              >
+                <WrongCavePage />
+              </Page>
+            ),
+            handle: {
+              crumb: () => <Link to="/projects/wrong-cave">Wrong Cave!</Link>,
             },
           },
         ],
