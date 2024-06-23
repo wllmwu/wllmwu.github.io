@@ -1,5 +1,14 @@
 import Image from "../../components/Image.tsx";
 
+<figure>
+  <Image
+    source="/images/wrong-cave/cinematic.png"
+    width={640}
+    height={360}
+    alt="Wide aerial view of hero vs. boss"
+  />
+</figure>
+
 ## Introduction
 
 In Spring 2024, I took the course [CSE 125](https://cse125.ucsd.edu) (Software
@@ -8,6 +17,15 @@ centers on a single quarter-long team project: the creation of a **distributed
 real-time 3D multiplayer game** in just 10 weeks, culminating in a [live
 demonstration](https://youtube.com/live/LMllEYOQoI8) for an audience of
 department faculty, course alumni, other students, and the public.
+
+<figure>
+  <Image
+    source="/images/wrong-cave/overview480.jpg"
+    width={480}
+    height={263}
+    alt="CSE 125 course logo"
+  />
+</figure>
 
 As CSE 125 is offered only once a year and space is limited to about 30
 students, the application process prioritizes demonstrated commitment and
@@ -23,8 +41,17 @@ every game ended up turning into something distinctive and interesting:
 - Asymmetric party crafting game (my team's!)
 - Rhythm-based Soulslike boss fight
 - Asymmetric maze dungeon crawler
-- Exploration/collection/stealth game
-- Character ability-based capture-the-flag/domination shooter
+- Exploration/<wbr />collection/<wbr />stealth game
+- Character ability-based capture-the-flag/<wbr />domination shooter
+
+<figure>
+  <Image
+    source="/images/wrong-cave/screenshots.png"
+    width={491}
+    height={360}
+    alt="Collage of screenshots from each of the five games"
+  />
+</figure>
 
 The groups page contains links to each group's website and live demo recording.
 From the thumbnails alone, it's clear that the only limit was our imagination!
@@ -47,16 +74,61 @@ and live server (plus a showcase of Sean's outstanding web dev skills).
 
 ## Our game
 
+<figure>
+  <Image
+    source="/images/wrong-cave/menu-card.png"
+    width={556}
+    height={360}
+    alt="Wrong Cave! title art"
+  />
+</figure>
+
 _Wrong Cave!_ is a two-stage asymmetric couch co-op crafting game in which a
 team of heroes tries to escape a cave and fight off the Mushroom King who lives
 there. In the first stage, the heroes frantically craft weapons and armor using
 resources collected from around the cave, while a small mushroom minion
 (controlled by another player) sneaks around and sabotages their efforts.
 
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/resources-1.png"
+      width={427}
+      height={240}
+      alt="Two hero players gathering resources"
+    />
+    <Image
+      source="/images/wrong-cave/resources-2.png"
+      width={427}
+      height={240}
+      alt="Two hero players gathering resources far away"
+    />
+  </div>
+</figure>
+
 In the second stage, the king breaks free (controlled by whoever played the
 minion) and tries to destroy the heroes or the minecart they need to escape; the
 heroes must protect themselves and the minecart using the weapons they have
 acquired.
+
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/king.png"
+      width={427}
+      height={240}
+      alt="Hero perspective of the mushroom king emerging from its enclosure"
+    />
+    <Image
+      source="/images/wrong-cave/minecart.png"
+      width={427}
+      height={240}
+      alt={
+        'Mushroom king standing in front of a minecart labelled "Heroes\' escape"'
+      }
+    />
+  </div>
+</figure>
 
 The game runs in web browsers, much like the many .io browser games in recent
 years, so there is no need to install anything else to play it. A live instance
@@ -83,7 +155,7 @@ included:
   the game (as well as its goofiness), but its influence is still present in the
   design of our boss character.
 - Web games like [Krunker.io](https://krunker.io) for their simple
-  interface/HUD style and lobby system.
+  interface/<wbr />HUD style and lobby system.
 
 ## Tools and technologies
 
@@ -106,10 +178,10 @@ included:
 - **[WebGL API](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API):**
   For rendering 3D graphics in the browser.
   - Our earliest decision as a team was to use WebGL so that our game could be
-    played in browsers, and having this chance to learn about WebGL was the main
-    reason I joined this group. Fortunately, I and several others already had
-    experience with OpenGL, which is very similar to WebGL—the latter just has a
-    few more limitations.
+    played in browsers on any platform, and having this chance to learn about
+    WebGL was the main reason I joined this group. Fortunately, I and several
+    others already had experience with OpenGL, which is very similar to
+    WebGL—the latter just has a few more limitations.
   - We found the [WebGL2 Fundamentals](https://webgl2fundamentals.org) website
     to be pretty helpful. It has tutorials that walk through a large number of
     topics with plenty of examples.
@@ -125,7 +197,7 @@ included:
     connections to reduce bandwidth usage. Because we use a set of locally
     connected machines with high bandwidth and low latency for the final demo in
     this course, students can just use TCP connections and less
-    compressed/optimized data structures for transmitting game states.
+    compressed/<wbr />optimized data structures for transmitting game states.
   - For our group in particular, since we were making a web game, UDP wasn't an
     option to begin with (browsers only allow TCP). We also got a lot of
     functionality basically for free from JS/TS—for example, JSON data
@@ -154,6 +226,7 @@ project specification, weekly reports, and final review on [our group page](http
 I'll summarize our weekly progress here:
 
 - **Week 1:** We held a long meeting to nail down some game design elements.
+
   - The core gameplay loop remained basically the same for the rest of the
     quarter: three players craft weapons on a timer while a fourth player
     sabotages them, then the fourth becomes a boss and they battle each other.
@@ -163,25 +236,134 @@ I'll summarize our weekly progress here:
     exactly how crafting would work, etc.) intentionally undecided, to return to
     them later; we needed to investigate things like JavaScript physics
     libraries and the performance implications of dynamic lighting first.
+
+  <figure>
+    <Image
+      source="/images/wrong-cave/dev/whiteboard.png"
+      width={600}
+      height={300}
+      alt="Long whiteboard covered with multicolored notes written in marker"
+    />
+    <figcaption>Notes from our meeting.</figcaption>
+  </figure>
+
 - **Week 2:** Concept art; basic physics simulation on the server; camera set up
   and rendering physics objects and static textured meshes on the client.
-- **Week 3:** More concept art; discussion of server code architecture/logic
-  organization; exploration of various lighting and shading models (point lights
-  with shadows, cel shading).
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/little-guys.png"
+        width={320}
+        height={240}
+        alt="Eight humanoid characters drawn in a cartoony style, each with a unique color and facial expression"
+      />
+      <Image
+        source="/images/wrong-cave/dev/fish.png"
+        width={305}
+        height={240}
+        alt="Detailed fish model and textured cubes on a black background with white dots"
+      />
+    </div>
+    <figcaption>
+      Character concept art and a fish model that we used for graphics testing.
+    </figcaption>
+  </figure>
+
+- **Week 3:** More concept art; discussion of server code
+  architecture/<wbr />logic organization; exploration of various lighting and
+  shading models (point lights with shadows, cel shading).
+
+  <figure>
+    <Image
+      source="/images/wrong-cave/dev/cylinder.png"
+      width={427}
+      height={240}
+      alt="Textured cubes with physically incorrect shadows surrounded by white wireframes on a black background with white dots"
+    />
+    <figcaption>
+      Wireframes showing the shapes of physics objects being simulated by the
+      server.
+    </figcaption>
+  </figure>
+
 - **Week 4:** Processing player inputs and translating to movement; shader
   pipeline to allow postprocessing steps; first-person camera and freecam mode;
   placeholder models; basic particle system; team social.
+
   - This was the first key milestone of the project: a client that sends inputs
     to a server, which responds with an updated game state that the client
     renders.
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/concept-map.png"
+        width={427}
+        height={240}
+        alt="Placeholder map model in white, rotated incorrectly against a black background with small miscellaneous objects in front"
+      />
+      <Image
+        source="/images/wrong-cave/dev/shadows.png"
+        width={427}
+        height={240}
+        alt="Placeholder map model lit by orange and green colored lights that cast shadows against it, on a black background; a white cylinder wireframe covers some of the image"
+      />
+    </div>
+    <figcaption>
+      Placeholder map model (it was rotated incorrectly for a while) and shadow
+      casting + first-person testing.
+    </figcaption>
+  </figure>
+
 - **Week 5:** Collision detection through the physics engine; 2D outline and cel
   shaders; the first of many object models.
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/outlines.png"
+        width={443}
+        height={240}
+        alt="Placeholder map model displayed with red outlines, partly obscured by a shower of red particles"
+      />
+      <Image
+        source="/images/wrong-cave/dev/player-model.png"
+        width={427}
+        height={240}
+        alt="Screenshot of the first player model, colored blue, in the Blender modeling software"
+      />
+    </div>
+    <figcaption>
+      Outline shader (drawing in red for visual contrast) and the first player
+      model being created in Blender.
+    </figcaption>
+  </figure>
+
 - **Week 6:** Picking up items; parsing triangle mesh collider from object file
   (used for generating the map's collision mesh).
+
+  <figure>
+    <iframe
+      width="427"
+      height="240"
+      src="https://www.youtube-nocookie.com/embed/DWq46qF4wvw?si=i_-YqmjyjnyLNGaw"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    />
+    <figcaption>
+      Testing the map collision mesh on Sean's YouTube channel.
+    </figcaption>
+  </figure>
+
 - **Week 7:** Support for multiple players; throwing items; recipe crafting
   system; revamped player movement system; revamped map collider parsing (using
   boxes instead of a triangle mesh because the latter didn't work very well);
   boss minion character; _lots_ of new models.
+
   - Our team morale was the lowest around this point in the quarter. It seemed
     like every week, we discovered more new tasks than we completed old ones,
     and the game was still more of a sandbox engine than a game where each
@@ -189,16 +371,84 @@ I'll summarize our weekly progress here:
   - I think we didn't know enough about the tools and game elements yet to
     properly plan out our requirements early on, so having this experience
     seems helpful for avoiding that kind of situation in the future.
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/stuck-ramp.png"
+        width={475}
+        height={240}
+        alt="Multiple players stuck on a ramp"
+      />
+      <Image
+        source="/images/wrong-cave/dev/smooth-lighting.png"
+        width={475}
+        height={240}
+        alt="Blue player model smoothly lit from below"
+      />
+      <iframe
+        width="427"
+        height="240"
+        src="https://www.youtube-nocookie.com/embed/W9U5Ez9gLIU?si=yX0-q4THrZzXfaXH"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      />
+    </div>
+    <figcaption>
+      Multiple players stuck on a ramp due to a physics bug, smooth shading
+      instead of two-tone shading, and throwing items.
+    </figcaption>
+  </figure>
+
 - **Week 8:** Sound effects; crafting stations and resource spawners; boss
   sabotage mechanics (blinding and setting traps); lighting fixes; revamped
   particle system; first playtests with most of the team.
+
   - Half of the team got sick during this week, sadly. But we pulled through!
   - As every game developer knows, playtests were hugely helpful for identifying
     high-priority issues that intruded on the player experience. We continued
     playtesting and tuning often in the run-up to the demo.
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/many-items.png"
+        width={427}
+        height={240}
+        alt="Room with large number of items and orange light in the background"
+      />
+      <Image
+        source="/images/wrong-cave/dev/playtest-1.png"
+        width={476}
+        height={240}
+        alt="Screenshot from a playtest with multiple players"
+      />
+      <Image
+        source="/images/wrong-cave/dev/playtest-2.png"
+        width={476}
+        height={240}
+        alt="Screenshot from a playtest with multiple players"
+      />
+      <Image
+        source="/images/wrong-cave/dev/playtest-3.png"
+        width={476}
+        height={240}
+        alt="Screenshot from a playtest with multiple players"
+      />
+    </div>
+    <figcaption>
+      Stress testing with a large number of items and three screenshots from a
+      playtest with multiple players.
+    </figcaption>
+  </figure>
+
 - **Week 9:** Game stages and win conditions; combat system; in-game text
   rendering; user interface; final game map; even more models; simple animation
   system; more sound effects.
+
   - At this point, there was a way to _win,_ so we finally had a true game.
   - The game itself had also become a _platform_—all our work on physics,
     graphics, networking, controls, game objects, etc. created foundational
@@ -210,11 +460,40 @@ I'll summarize our weekly progress here:
     and boss. However, we really wanted to push for real in-game combat, and it
     actually turned out to be relatively easy to achieve thanks to the
     aforementioned platform. That is, instead of needing to build it from the
-    ground up, we just had to add on to existing systems like item interaction.
+    ground up, we could just add on to existing systems like item interaction.
+
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/text.png"
+        width={427}
+        height={240}
+        alt="Red text floating in space for testing"
+      />
+      <Image
+        source="/images/wrong-cave/dev/chairs.png"
+        width={427}
+        height={240}
+        alt="Piles of chairs, knives, and iron ore"
+      />
+      <Image
+        source="/images/wrong-cave/dev/new-map.png"
+        width={475}
+        height={240}
+        alt="New map model consisting of rocky gray walls and floor, with wooden beams supporting some entrances; the center is lit by an orange light"
+      />
+    </div>
+    <figcaption>
+      Testing in-game text, piles of chairs and other items caused by a bug with
+      restarting the game, and the glorious new map model.
+    </figcaption>
+  </figure>
+
 - **Week 10:** Big boss character; full two-stage game sequence; polished UI,
   lobby, and lighting; ability to correctly restart the game; in-game crafting
   recipe guides; particles, camera shake, and other "juicy" effects; many small
   features, fixes, optimizations, and quality-of-life changes; final demo!
+
   - As tends to happen in these situations, the majority of this work occurred
     in the 24 hours before the demo ([nearly 200 of our ~700 commits!](https://github.com/ucsd-cse125-sp24/group1/commits/main/?since=2024-06-06&until=2024-06-07)).
     We didn't even procrastinate, having made pretty steady progress all
@@ -224,11 +503,164 @@ I'll summarize our weekly progress here:
     course, one or two known bugs that remained. It was a great finale to a
     great quarter.
 
+  <figure>
+    <div>
+      <Image
+        source="/images/wrong-cave/dev/ui-options.png"
+        width={427}
+        height={240}
+        alt={
+          'User interface: Four players stand in center of screen; "Game Logo" is displayed prominently above them; a list of players and color selector is shown in panel on right side; a list of settings sliders is shown in panel on left side'
+        }
+      />
+      <Image
+        source="/images/wrong-cave/dev/hole.png"
+        width={493}
+        height={240}
+        alt="Blue player standing in front of a hole lit by green light while holding iron ore; a workbench stands to the left in the corner of the chamber"
+      />
+      <Image
+        source="/images/wrong-cave/dev/pickaxe.png"
+        width={494}
+        height={240}
+        alt="First-person view of the player holding a pickaxe while standing in front of an iron ore deposit"
+      />
+    </div>
+    <figcaption>
+      Gameplay images from one of the final versions before the demo. We chose
+      to leave the "Game Logo" text in place.
+    </figcaption>
+  </figure>
+
+### Demo day
+
+Below are some images and GIFs taken from our demo livestream, which is also
+available on YouTube: [full stream](https://www.youtube.com/live/LMllEYOQoI8)
+(our segment begins at 22:00 following Dr. Voelker's introductory remarks) and
+[edited playlist](https://www.youtube.com/watch?v=WR3wl0M94Zk&list=PLbbCsk7MUIGdMpwjGznoc0ooiSoYVyLtU&index=4).
+
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/demo/big-screen.png"
+      width={427}
+      height={240}
+      alt="Gameplay being projected onto large auditorium screen while players sit at computers onstage with their backs to the audience"
+    />
+    <Image
+      source="/images/wrong-cave/demo/players.png"
+      width={427}
+      height={240}
+      alt="Closeup of players onstage during the demo with their backs to the audience"
+    />
+    <Image
+      source="/images/wrong-cave/demo/clap.png"
+      width={427}
+      height={240}
+      alt="Side angle view of players talking and smiling onstage while the audience claps in the background"
+    />
+  </div>
+  <figcaption>
+    Views of the stage from our demo livestream. Each group did two runs of
+    their game, inviting two people from the audience to play.
+  </figcaption>
+</figure>
+
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/demo/big-boss.png"
+      width={487}
+      height={240}
+      alt="First-person gameplay screenshot of the Mushroom King attacking the player, who is holding a bow, while a green hero stands to the left"
+    />
+    <Image
+      source="/images/wrong-cave/demo/slap.png"
+      width={487}
+      height={240}
+      alt="First-person gameplay screenshot of the minion being slapped by a blue hero, with a red vignette laid over the screen"
+    />
+    <Image
+      source="/images/wrong-cave/demo/spectate.png"
+      width={487}
+      height={240}
+      alt="Gameplay screenshot of an aerial view of blue, green, and yellow heroes running through the cave"
+    />
+  </div>
+  <figcaption>Gameplay screenshots from our demo.</figcaption>
+</figure>
+
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/demo/demo1.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from hero perspective: Hero picks up wood and throws it into furnace; furnace ejects iron ingot, which bounces away and falls down a hole; hero follows down the hole but the ingot is picked up by the minion"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo2.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from hero perspective: Hero throws wood onto anvil, which ejects a sword; hero picks up the sword and walks away"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo3.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from hero perspective: Hero glimpses the Mushroom King in a large room, then jumps over a hole and throws string onto a workbench; workbench ejects a bow; hero picks up the bow and begins launching donuts at the Mushroom King"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo4.gif"
+      width={427}
+      height={240}
+      alt="Players talk and laugh, sitting at computers on stage, while audience claps in the background"
+    />
+  </div>
+  <figcaption>
+    Segments from the first run of our demo, where we showed the hero
+    perspective.
+  </figcaption>
+</figure>
+
+<figure>
+  <div>
+    <Image
+      source="/images/wrong-cave/demo/demo5.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from minion perspective: Minion watches heroes throw items at a workbench, which ejects a bow; minion and heroes chase after the bow and a blue hero picks it up, then throws it further away; minion follows the bow and picks it up, then runs away with it"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo6.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from minion perspective: Minion follows a yellow hero up a slope and runs through a hallway; a blue hero follows the minion into a room and slaps it, causing it to freeze in place"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo7.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from minion perspective: Minion watches a blue hero throw a bow through a doorway; a colorful bow is thrown back out"
+    />
+    <Image
+      source="/images/wrong-cave/demo/demo8.gif"
+      width={427}
+      height={240}
+      alt="Gameplay recording from king perspective: The king enters a large chamber where several heroes are waiting; the king repeatedly launches mushrooms at the heroes, one of whom is holding a bow and is launching donuts back; a third hero enters behind the king holding a sword and begins attacking the king"
+    />
+  </div>
+  <figcaption>
+    Segments from the second run of our demo, where we showed the boss
+    perspective.
+  </figcaption>
+</figure>
+
 ## Takeaways
 
 - **The importance of task tracking:** We mainly tracked our work informally by
-  discussing what we had done/were going to do at our weekly meetings. I think
-  we all wanted to focus on getting things done with minimal overhead,
+  discussing what we had done/<wbr />were going to do at our weekly meetings. I
+  think we all wanted to focus on getting things done with minimal overhead,
   especially with no official "person in charge." But on several occasions, we
   accidentally did duplicate work or forgot about an important task. Some other
   groups used GitHub Issues and I also use them a lot personally, so such a
@@ -253,10 +685,11 @@ I'll summarize our weekly progress here:
   many different ideas over the course of 10 weeks, but we always made sure to
   examine them through that lens (and some others, such as "is it feasible to
   implement?" or "will it impact performance?"). I think this approach helped
-  make our game feel more cohesive, as everything in it had a purpose.
+  make our game feel more cohesive, as everything in it was made intentionally
+  with a higher purpose in mind.
 - **The importance of cleaning up after yourself:** WebGL and OpenGL have a lot
   of different types of buffers and bindings. One common and hard-to-debug issue
-  that we encountered was forgetting to unbind/clean up everything at the end
-  of a function or block. If something is left behind and is still there during
-  the next WebGL operation, it's likely to create some kind of invalid state and
-  you get a nonspecific warning or error.
+  that we encountered was forgetting to unbind/<wbr />clean up everything at the
+  end of a function or block. If something is left behind and is still there
+  during the next WebGL operation, it's likely to create some kind of invalid
+  state and you get a nonspecific warning or error.
