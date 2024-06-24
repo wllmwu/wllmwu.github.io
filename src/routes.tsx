@@ -1,6 +1,5 @@
 import { Link, RouteObject } from "react-router-dom";
 import AppRoot from "./AppRoot.tsx";
-import Page from "./components/Page.tsx";
 import HomePage from "./pages/index.mdx";
 import AboutPage from "./pages/about.mdx";
 import AppsPage from "./pages/apps/index.mdx";
@@ -24,90 +23,67 @@ export const routes: RouteObject[] = [
   {
     path: "/",
     element: <AppRoot />,
-    errorElement: (
-      <Page title="404" hideBanner>
-        <NotFoundPage />
-      </Page>
-    ),
+    errorElement: <NotFoundPage />,
     handle: {
       crumb: () => <Link to="/">Home</Link>,
     },
     children: [
       {
         index: true,
-        element: (
-          <Page title="Home" hideBreadcrumb>
-            <HomePage />
-          </Page>
-        ),
+        element: <HomePage />,
+        handle: {
+          documentTitle: "Home",
+        },
       },
       {
         path: "/about",
-        element: (
-          <Page title="About">
-            <AboutPage />
-          </Page>
-        ),
+        element: <AboutPage />,
         handle: {
           crumb: () => <Link to="/about">About</Link>,
+          documentTitle: "About",
         },
       },
       {
         path: "/apps",
         handle: {
           crumb: () => <Link to="/apps">Apps</Link>,
+          documentTitle: "Apps",
         },
         children: [
           {
             index: true,
-            element: (
-              <Page title="Apps">
-                <AppsPage />
-              </Page>
-            ),
+            element: <AppsPage />,
           },
           {
             path: "/apps/math-keeper",
-            element: (
-              <Page title="Math Keeper" seoTitle={"Apps \u2013 Math Keeper"}>
-                <MathKeeperPage />
-              </Page>
-            ),
+            element: <MathKeeperPage />,
             handle: {
               crumb: () => <Link to="/apps/math-keeper">Math Keeper</Link>,
+              documentTitle: "Apps \u2013 Math Keeper",
             },
           },
           {
             path: "/apps/copy-better",
-            element: (
-              <Page title="Copy Better" seoTitle={"Apps \u2013 Copy Better"}>
-                <CopyBetterPage />
-              </Page>
-            ),
+            element: <CopyBetterPage />,
             handle: {
               crumb: () => <Link to="/apps/copy-better">Copy Better</Link>,
+              documentTitle: "Apps \u2013 Copy Better",
             },
           },
           {
             path: "/apps/snake-cubed",
-            element: (
-              <Page title="Snake, Cubed" seoTitle={"Apps \u2013 Snake, Cubed"}>
-                <SnakeCubedPage />
-              </Page>
-            ),
+            element: <SnakeCubedPage />,
             handle: {
               crumb: () => <Link to="/apps/snake-cubed">Snake, Cubed</Link>,
+              documentTitle: "Apps \u2013 Snake, Cubed",
             },
           },
           {
             path: "/apps/harvesthaul",
-            element: (
-              <Page title="HarvestHaul" seoTitle={"Apps \u2013 HarvestHaul"}>
-                <HarvestHaulPage />
-              </Page>
-            ),
+            element: <HarvestHaulPage />,
             handle: {
               crumb: () => <Link to="/apps/harvesthaul">HarvestHaul</Link>,
+              documentTitle: "Apps \u2013 HarvestHaul",
             },
           },
         ],
@@ -120,84 +96,55 @@ export const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: (
-              <Page title="Projects">
-                <ProjectsPage />
-              </Page>
-            ),
+            element: <ProjectsPage />,
+            handle: {
+              documentTitle: "Projects",
+            },
           },
           {
             path: "/projects/course-grapher",
-            element: (
-              <Page
-                title="Course Grapher"
-                seoTitle={"Projects \u2013 UCSD Course Grapher"}
-              >
-                <CourseGrapherPage />
-              </Page>
-            ),
+            element: <CourseGrapherPage />,
             handle: {
               crumb: () => (
                 <Link to="/projects/course-grapher">Course Grapher</Link>
               ),
+              documentTitle: "Projects \u2013 UCSD Course Grapher",
             },
           },
           {
             path: "/projects/tse",
-            element: (
-              <Page
-                title="Triton Software Engineering"
-                seoTitle={"Projects \u2013 Triton Software Engineering"}
-                showTOC
-              >
-                <TSEPage />
-              </Page>
-            ),
+            element: <TSEPage />,
             handle: {
               crumb: () => (
                 <Link to="/projects/tse">Triton Software Engineering</Link>
               ),
+              documentTitle: "Projects \u2013 Triton Software Engineering",
             },
           },
           {
             path: "/projects/raytracer",
-            element: (
-              <Page
-                title="Raytracer"
-                seoTitle={"Projects \u2013 Computer Graphics Raytracer"}
-              >
-                <RaytracerPage />
-              </Page>
-            ),
+            element: <RaytracerPage />,
             handle: {
               crumb: () => <Link to="/projects/raytracer">Raytracer</Link>,
+              documentTitle: "Projects \u2013 Computer Graphics Raytracer",
             },
           },
           {
             path: "/projects/wrong-cave",
-            element: (
-              <Page
-                title="Wrong Cave!"
-                seoTitle={"Projects \u2013 Wrong Cave!"}
-              >
-                <WrongCavePage />
-              </Page>
-            ),
+            element: <WrongCavePage />,
             handle: {
               crumb: () => <Link to="/projects/wrong-cave">Wrong Cave!</Link>,
+              documentTitle: "Projects \u2013 Wrong Cave!",
             },
           },
         ],
       },
       {
         path: "/contact",
-        element: (
-          <Page title="Contact">
-            <ContactPage />
-          </Page>
-        ),
+        element: <ContactPage />,
         handle: {
           crumb: () => <Link to="/contact">Contact</Link>,
+          documentTitle: "Contact",
         },
       },
       {
@@ -205,47 +152,31 @@ export const routes: RouteObject[] = [
         children: [
           {
             index: true,
-            element: (
-              <Page title="Privacy policy" hideBanner hideBreadcrumb>
-                <PrivacyPage />
-              </Page>
-            ),
+            element: <PrivacyPage />,
+            handle: {
+              documentTitle: "Privacy policy",
+            },
           },
           {
             path: "/privacy/math-keeper",
-            element: (
-              <Page
-                title="Math Keeper privacy policy"
-                hideBanner
-                hideBreadcrumb
-              >
-                <MKPrivacyPage />
-              </Page>
-            ),
+            element: <MKPrivacyPage />,
+            handle: {
+              documentTitle: "Privacy policy",
+            },
           },
           {
             path: "/privacy/copy-better",
-            element: (
-              <Page
-                title="Copy Better privacy policy"
-                hideBanner
-                hideBreadcrumb
-              >
-                <CBPrivacyPage />
-              </Page>
-            ),
+            element: <CBPrivacyPage />,
+            handle: {
+              documentTitle: "Privacy policy",
+            },
           },
           {
             path: "/privacy/snake-cubed",
-            element: (
-              <Page
-                title="Snake, Cubed privacy policy"
-                hideBanner
-                hideBreadcrumb
-              >
-                <SCPrivacyPage />
-              </Page>
-            ),
+            element: <SCPrivacyPage />,
+            handle: {
+              documentTitle: "Privacy policy",
+            },
           },
         ],
       },
