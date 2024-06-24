@@ -42,7 +42,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: var(--content-overlay-color);
+  background-color: rgba(var(--surface-color-rgb) / 0.875);
   padding: 1rem;
   border-top: 0.5px solid var(--line-color);
 }

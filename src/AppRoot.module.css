@@ -30,5 +30,5 @@
 }
 
 .backToTopBox a {
-  color: var(--content-background-color);
+  color: var(--text-opposite-color);
 }

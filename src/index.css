@@ -1,9 +1,10 @@
 :root {
   --background-color: #fff;
-  --content-background-color: #fff;
-  --content-overlay-color: #ffffffe8;
+  --surface-color: #fff;
+  --surface-color-rgb: 255 255 255;
   --text-primary-color: #000;
   --text-secondary-color: #727272;
+  --text-opposite-color: #fff;
   --accent-color: #007faf;
   --line-color: #c0c0c0;
   --shadow-color: #00000030;
