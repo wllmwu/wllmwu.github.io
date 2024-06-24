@@ -4,12 +4,6 @@
   padding: 1rem var(--content-side-padding);
 }
 
-@media (max-width: 768px) {
-  .page {
-    padding: 0;
-  }
-}
-
 .skipLink {
   position: absolute;
   top: -2em;

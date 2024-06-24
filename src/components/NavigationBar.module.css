@@ -33,18 +33,26 @@
 }
 
 .topLinkList {
+  margin-left: 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 0.5rem;
+  column-gap: 2rem;
   align-items: baseline;
   padding: 0;
   list-style-type: none;
 }
 
+@media (max-width: 768px) {
+  .topLinkList {
+    margin-left: 0;
+    column-gap: 1rem;
+  }
+}
+
 .topLinkItem {
   position: relative;
-  margin-left: 2rem;
 }
 
 .topLink {
