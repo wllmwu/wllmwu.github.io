@@ -8,10 +8,10 @@
 }
 
 .carousel {
-  width: 100%;
+  width: calc(100% + 2 * var(--content-side-padding));
   height: auto;
-  margin: 1rem 0;
-  padding: 1rem 0.25rem;
+  margin: 1rem calc(-1 * var(--content-side-padding));
+  padding: 1rem var(--content-side-padding);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -19,16 +19,13 @@
   flex-wrap: nowrap;
   column-gap: 2%;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 }
 
 .carousel .image {
   max-width: 90%;
   height: auto;
   display: inline-block;
-}
-
-.appIcon {
-  border: 1px solid var(--line-color);
-  border-radius: 25%;
-  box-sizing: content-box;
+  scroll-snap-align: center;
 }

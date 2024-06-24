@@ -22,22 +22,4 @@ function Image({ source, width, height, alt, className }: ImageProps) {
   );
 }
 
-interface AppIconImageProps {
-  source: string;
-  size: number;
-  alt?: string;
-}
-
-export function AppIconImage({ source, size, alt }: AppIconImageProps) {
-  return (
-    <Image
-      source={source}
-      width={size}
-      height={size}
-      alt={alt}
-      className={styles.appIcon}
-    />
-  );
-}
-
 export default Image;
