@@ -1,5 +1,5 @@
 :root {
-  --background-color: #e8e8e8;
+  --background-color: #fff;
   --content-background-color: #fff;
   --content-overlay-color: #ffffffe8;
   --text-primary-color: #000;
@@ -7,15 +7,16 @@
   --accent-color: #007faf;
   --line-color: #c0c0c0;
   --shadow-color: #00000030;
-  --body-typeface: "Noto Serif", Georgia, "Times New Roman", Times, serif;
+  --body-typeface: "Open Sans", Helvetica, Arial, sans-serif;
   --heading-typeface: "Barlow Semi Condensed", Helvetica, Arial, sans-serif;
-  --heading-secondary-typeface: "Barlow", Helvetica, Arial, sans-serif;
   --code-typeface: "Noto Sans Mono", Menlo, Monaco, monospace;
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
   --common-border-radius: 8px;
   --content-width: 90%;
   --content-max-width: 64rem;
@@ -26,7 +27,7 @@
   font-weight: var(--weight-normal);
 
   color-scheme: light dark;
-  background-color: #fff;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -63,7 +64,7 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-typeface);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-bold);
   margin-top: 1em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
