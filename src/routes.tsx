@@ -47,12 +47,14 @@ export const routes: RouteObject[] = [
         path: "/apps",
         handle: {
           crumb: () => <Link to="/apps">Apps</Link>,
-          documentTitle: "Apps",
         },
         children: [
           {
             index: true,
             element: <AppsPage />,
+            handle: {
+              documentTitle: "Apps",
+            },
           },
           {
             path: "/apps/math-keeper",
