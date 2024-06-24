@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
-import styles from "../styles/NavigationBar.module.css";
+import styles from "./NavigationBar.module.css";
 
 interface NavBarLink {
   title: string;

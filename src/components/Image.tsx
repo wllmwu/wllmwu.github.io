@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import styles from "../styles/Image.module.css";
+import styles from "./Image.module.css";
 
 interface ImageProps {
   source: string;

@@ -2,7 +2,7 @@
 This component is currently unused
 */
 
-import styles from "../styles/TableOfContents.module.css";
+import styles from "./TableOfContents.module.css";
 
 export interface IndexItem {
   title: string;

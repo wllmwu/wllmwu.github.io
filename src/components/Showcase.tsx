@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Image from "./Image";
-import styles from "../styles/Showcase.module.css";
+import styles from "./Showcase.module.css";
 
 export interface ShowcaseProps {
   title: string;
