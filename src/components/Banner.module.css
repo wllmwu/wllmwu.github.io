@@ -1,16 +1,20 @@
-.bannerBackground {
-  height: 16rem;
+.banner {
+  margin: 0 calc(-1 * var(--content-side-padding)) 2rem;
+  padding: 2rem var(--content-side-padding);
+  min-height: 25rem;
+  height: auto;
   background-color: var(--accent-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.bannerTitle {
-  margin: 0 2rem;
+.banner h1 {
+  margin: 0;
+  font-size: 9rem;
+  line-height: 1;
   border: none;
-  font-size: 4rem;
   color: #fff;
   text-shadow: 0.02em 0.04em 0.04em var(--shadow-color);
 }

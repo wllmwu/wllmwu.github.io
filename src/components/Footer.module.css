@@ -14,8 +14,8 @@
 
 @media (max-width: 768px) {
   .footerContent {
-    padding-left: var(--content-padding);
-    padding-right: var(--content-padding);
+    padding-left: var(--content-side-padding);
+    padding-right: var(--content-side-padding);
   }
 }
 

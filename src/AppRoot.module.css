@@ -1,7 +1,7 @@
 .page {
   background-color: var(--background-color);
   width: 100%;
-  padding: 1rem 9rem;
+  padding: 1rem var(--content-side-padding);
 }
 
 @media (max-width: 768px) {

@@ -1,15 +1,12 @@
+import React from "react";
 import styles from "./Banner.module.css";
 
 interface BannerProps {
-  title: string;
+  children: React.ReactNode;
 }
 
-function Banner({ title }: BannerProps) {
-  return (
-    <div className={styles.bannerBackground}>
-      <h1 className={styles.bannerTitle}>{title}</h1>
-    </div>
-  );
+function Banner({ children }: BannerProps) {
+  return <div className={styles.banner}>{children}</div>;
 }
 
 export default Banner;

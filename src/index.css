@@ -7,9 +7,11 @@
   --accent-color: #007faf;
   --line-color: #c0c0c0;
   --shadow-color: #00000030;
+
   --body-typeface: "Open Sans", Helvetica, Arial, sans-serif;
   --heading-typeface: "Barlow Semi Condensed", Helvetica, Arial, sans-serif;
   --code-typeface: "Noto Sans Mono", Menlo, Monaco, monospace;
+
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
@@ -17,10 +19,11 @@
   --weight-bold: 700;
   --weight-extrabold: 800;
   --weight-black: 900;
+
   --common-border-radius: 8px;
   --content-width: 90%;
   --content-max-width: 64rem;
-  --content-padding: 4rem;
+  --content-side-padding: 9rem;
 
   font-family: var(--body-typeface);
   line-height: 1.5;
