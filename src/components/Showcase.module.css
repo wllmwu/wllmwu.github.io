@@ -1,4 +1,4 @@
-.showcaseGrid {
+.showcaseList {
   width: 100%;
   max-width: 64rem;
   margin: 2rem auto;
@@ -10,7 +10,7 @@
   row-gap: 1rem;
 }
 
-.showcaseBox {
+.showcaseItem {
   width: 48%;
   border: 1px solid var(--line-color);
   border-radius: var(--common-border-radius);
@@ -20,14 +20,14 @@
 }
 
 @media (max-width: 960px) {
-  .showcaseGrid {
+  .showcaseList {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .showcaseBox {
+  .showcaseItem {
     width: 100%;
     max-width: 32rem;
   }
