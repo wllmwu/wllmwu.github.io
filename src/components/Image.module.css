@@ -20,7 +20,8 @@
   column-gap: 2%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scroll-padding: 0 var(--content-side-padding);
 }
 
 .carousel .image {

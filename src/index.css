@@ -1,7 +1,6 @@
 :root {
-  --background-color: #fff;
+  --background-color: #fbfbfb;
   --surface-color: #fff;
-  --surface-color-rgb: 255 255 255;
   --text-primary-color: #000;
   --text-secondary-color: #727272;
   --text-opposite-color: #fff;
@@ -35,6 +34,12 @@
   text-rendering: optimizeLegibility;
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
+}
+
+@media (max-width: 960px) {
+  :root {
+    --content-side-padding: 4rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -125,7 +130,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
   text-underline-offset: 0.125em;
 }
