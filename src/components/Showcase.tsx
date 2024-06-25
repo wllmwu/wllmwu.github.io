@@ -19,27 +19,25 @@ export interface ShowcaseProps {
 
 function Showcase({ items }: ShowcaseProps) {
   return (
-    <div className={styles.showcaseList}>
+    <ul className={styles.showcaseList}>
       {items.map(({ title, description, link, thumbnail }, index) => (
-        <div key={index} className={styles.showcaseItem}>
-          <Link to={link} tabIndex={-1}>
-            <Image
-              source={thumbnail?.source ?? "/images/default-thumbnail.png"}
-              width={thumbnail?.width ?? 1067}
-              height={thumbnail?.height ?? 600}
-              alt={`Go to the ${title} page`}
-              className={styles.showcaseThumbnail}
-            />
-          </Link>
-          <div className={styles.showcaseOverlay}>
+        <li key={index} className={styles.showcaseItem}>
+          <Image
+            source={thumbnail?.source ?? "/images/default-thumbnail.png"}
+            width={thumbnail?.width ?? 1067}
+            height={thumbnail?.height ?? 600}
+            alt=""
+            className={styles.showcaseThumbnail}
+          />
+          <div className={styles.showcaseTextWrapper}>
             <p className={styles.showcaseTitle}>
               <Link to={link}>{title}</Link>
             </p>
             <p className={styles.showcaseDescription}>{description}</p>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
