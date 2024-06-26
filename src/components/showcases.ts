@@ -3,7 +3,7 @@ import type { ShowcaseItem } from "./Showcase";
 export const siteShowcases: Record<string, ShowcaseItem> = {
   about: {
     title: "About me",
-    description: "Some more information about myself, plus my resume",
+    description: "My resume and some more information about myself.",
     link: "/about",
   },
 };
@@ -12,7 +12,7 @@ export const appShowcases: Record<string, ShowcaseItem> = {
   copyBetter: {
     title: "Copy Better",
     description:
-      "A convenient clipboard extension app for storing and organizing clips to paste anywhere, with 17,000+ downloads on the App Store! Built with Swift and Xcode.",
+      "A convenient clipboard extension app for storing and organizing clips to paste anywhere, with 18,000+ downloads on the App Store! Built with Swift and Xcode.",
     link: "/apps/copy-better",
     thumbnail: {
       source: "/images/copy-better/thumbnail.png",
@@ -34,7 +34,7 @@ export const appShowcases: Record<string, ShowcaseItem> = {
   mathKeeper: {
     title: "Math Keeper",
     description:
-      "A customizable math formula reference app for students and anyone else. Built with Xcode and Objective-C.",
+      "A customizable math formula reference app for students and anyone else. Built with Objective-C and Xcode.",
     link: "/apps/math-keeper",
     thumbnail: {
       source: "/images/math-keeper/thumbnail.png",
@@ -68,9 +68,9 @@ export const projectShowcases: Record<string, ShowcaseItem> = {
     },
   },
   tse: {
-    title: "Triton Software Eng",
+    title: "Triton Software Engineering",
     description:
-      "Projects for nonprofits that I've worked on as part of a student org at UCSD.",
+      "Web and mobile app projects for nonprofits that I've worked on as part of a volunteer student org at UCSD.",
     link: "/projects/tse",
     thumbnail: {
       source: "/images/tse/thumbnail.png",
@@ -81,7 +81,7 @@ export const projectShowcases: Record<string, ShowcaseItem> = {
   raytracer: {
     title: "Raytracer",
     description:
-      "A raytracing program that I built for an advanced computer graphics course.",
+      "A raytracing program that I built for an advanced computer graphics course using C++ and OpenMP.",
     link: "/projects/raytracer",
     thumbnail: {
       source: "/images/raytracer/thumbnail.png",
@@ -92,12 +92,12 @@ export const projectShowcases: Record<string, ShowcaseItem> = {
   wrongCave: {
     title: "Wrong Cave!",
     description:
-      "A 3D multiplayer game that I created for a software systems course in my final undergraduate quarter.",
+      "A 3D multiplayer game that I created for a software systems course in my final undergraduate quarter. Built with TypeScript and WebGL.",
     link: "/projects/wrong-cave",
-    // thumbnail: {
-    //   source: "/images/default-thumbnail.png",
-    //   width: 1067,
-    //   height: 600,
-    // },
+    thumbnail: {
+      source: "/images/wrong-cave/cinematic.png",
+      width: 1280,
+      height: 720,
+    },
   },
 };
