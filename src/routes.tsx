@@ -19,13 +19,22 @@ import CBPrivacyPage from "./pages/privacy/copy-better.mdx";
 import SCPrivacyPage from "./pages/privacy/snake-cubed.mdx";
 import NotFoundPage from "./pages/404.mdx";
 
+const makeBreadcrumb = (path: string, title: string) =>
+  function Breadcrumb() {
+    return (
+      <Link to={path} className="fancy">
+        {title}
+      </Link>
+    );
+  };
+
 export const routes: RouteObject[] = [
   {
     path: "/",
     element: <AppRoot />,
     errorElement: <NotFoundPage />,
     handle: {
-      crumb: () => <Link to="/">Home</Link>,
+      crumb: makeBreadcrumb("/", "Home"),
     },
     children: [
       {
@@ -39,14 +48,14 @@ export const routes: RouteObject[] = [
         path: "/about",
         element: <AboutPage />,
         handle: {
-          crumb: () => <Link to="/about">About</Link>,
+          crumb: makeBreadcrumb("/about", "About"),
           documentTitle: "About",
         },
       },
       {
         path: "/apps",
         handle: {
-          crumb: () => <Link to="/apps">Apps</Link>,
+          crumb: makeBreadcrumb("/apps", "Apps"),
         },
         children: [
           {
@@ -60,7 +69,7 @@ export const routes: RouteObject[] = [
             path: "/apps/math-keeper",
             element: <MathKeeperPage />,
             handle: {
-              crumb: () => <Link to="/apps/math-keeper">Math Keeper</Link>,
+              crumb: makeBreadcrumb("/apps/math-keeper", "Math Keeper"),
               documentTitle: "Apps \u2013 Math Keeper",
             },
           },
@@ -68,7 +77,7 @@ export const routes: RouteObject[] = [
             path: "/apps/copy-better",
             element: <CopyBetterPage />,
             handle: {
-              crumb: () => <Link to="/apps/copy-better">Copy Better</Link>,
+              crumb: makeBreadcrumb("/apps/copy-better", "Copy Better"),
               documentTitle: "Apps \u2013 Copy Better",
             },
           },
@@ -76,7 +85,7 @@ export const routes: RouteObject[] = [
             path: "/apps/snake-cubed",
             element: <SnakeCubedPage />,
             handle: {
-              crumb: () => <Link to="/apps/snake-cubed">Snake, Cubed</Link>,
+              crumb: makeBreadcrumb("/apps/snake-cubed", "Snake, Cubed"),
               documentTitle: "Apps \u2013 Snake, Cubed",
             },
           },
@@ -84,7 +93,7 @@ export const routes: RouteObject[] = [
             path: "/apps/harvesthaul",
             element: <HarvestHaulPage />,
             handle: {
-              crumb: () => <Link to="/apps/harvesthaul">HarvestHaul</Link>,
+              crumb: makeBreadcrumb("/apps/harvesthaul", "HarvestHaul"),
               documentTitle: "Apps \u2013 HarvestHaul",
             },
           },
@@ -93,7 +102,7 @@ export const routes: RouteObject[] = [
       {
         path: "/projects",
         handle: {
-          crumb: () => <Link to="/projects">Projects</Link>,
+          crumb: makeBreadcrumb("/projects", "Projects"),
         },
         children: [
           {
@@ -107,8 +116,9 @@ export const routes: RouteObject[] = [
             path: "/projects/course-grapher",
             element: <CourseGrapherPage />,
             handle: {
-              crumb: () => (
-                <Link to="/projects/course-grapher">Course Grapher</Link>
+              crumb: makeBreadcrumb(
+                "/projects/course-grapher",
+                "Course Grapher"
               ),
               documentTitle: "Projects \u2013 UCSD Course Grapher",
             },
@@ -117,8 +127,9 @@ export const routes: RouteObject[] = [
             path: "/projects/tse",
             element: <TSEPage />,
             handle: {
-              crumb: () => (
-                <Link to="/projects/tse">Triton Software Engineering</Link>
+              crumb: makeBreadcrumb(
+                "/projects/tse",
+                "Triton Software Engineering"
               ),
               documentTitle: "Projects \u2013 Triton Software Engineering",
             },
@@ -127,7 +138,7 @@ export const routes: RouteObject[] = [
             path: "/projects/raytracer",
             element: <RaytracerPage />,
             handle: {
-              crumb: () => <Link to="/projects/raytracer">Raytracer</Link>,
+              crumb: makeBreadcrumb("/projects/raytracer", "Raytracer"),
               documentTitle: "Projects \u2013 Computer Graphics Raytracer",
             },
           },
@@ -135,7 +146,7 @@ export const routes: RouteObject[] = [
             path: "/projects/wrong-cave",
             element: <WrongCavePage />,
             handle: {
-              crumb: () => <Link to="/projects/wrong-cave">Wrong Cave!</Link>,
+              crumb: makeBreadcrumb("/projects/wrong-cave", "Wrong Cave!"),
               documentTitle: "Projects \u2013 Wrong Cave!",
             },
           },
@@ -145,7 +156,7 @@ export const routes: RouteObject[] = [
         path: "/contact",
         element: <ContactPage />,
         handle: {
-          crumb: () => <Link to="/contact">Contact</Link>,
+          crumb: makeBreadcrumb("/contact", "Contact"),
           documentTitle: "Contact",
         },
       },
