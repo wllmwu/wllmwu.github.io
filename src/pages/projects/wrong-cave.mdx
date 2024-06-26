@@ -1,4 +1,11 @@
+import Banner from "../../components/Banner";
 import Image from "../../components/Image.tsx";
+
+<Banner>
+
+# Wrong Cave!
+
+</Banner>
 
 <figure>
   <Image
@@ -11,11 +18,11 @@ import Image from "../../components/Image.tsx";
 
 ## Introduction
 
-In Spring 2024, I took the course [CSE 125](https://cse125.ucsd.edu) (Software
-System Design and Implementation) with Professor Geoff Voelker. This course
+In Spring 2024, I took the course **[CSE 125](https://cse125.ucsd.edu) (Software
+System Design and Implementation)** with Professor Geoff Voelker. This course
 centers on a single quarter-long team project: the creation of a **distributed
-real-time 3D multiplayer game** in just 10 weeks, culminating in a [live
-demonstration](https://youtube.com/live/LMllEYOQoI8) for an audience of
+real-time 3D multiplayer game** in just 10 weeks, culminating in a
+[live demonstration](https://youtube.com/live/LMllEYOQoI8) for an audience of
 department faculty, course alumni, other students, and the public.
 
 <figure>
@@ -29,14 +36,16 @@ department faculty, course alumni, other students, and the public.
 
 As CSE 125 is offered only once a year and space is limited to about 30
 students, the application process prioritizes demonstrated commitment and
-problem-solving ability. (See the [course overview](https://cse125.ucsd.edu/2024/overview.html)
-for more details.) Thus, I'm honored to have been a part of the course and I
-consider it to be one of my most significant experiences at UC San Diego.
+problem-solving ability. (See the
+[course overview](https://cse125.ucsd.edu/2024/overview.html) for more details.)
+Thus, I'm honored to have been a part of the course and I consider it to be one
+of my most significant experiences at UC San Diego.
 
 Students in the course were separated into five groups. Each group had six
 developers and one artist who worked together on their own unique game from
-concept to implementation. As shown on the [2024 groups page](https://cse125.ucsd.edu/2024/groups.html),
-every game ended up turning into something distinctive and interesting:
+concept to implementation. As shown on the
+[2024 groups page](https://cse125.ucsd.edu/2024/groups.html), every game ended
+up turning into something distinctive and interesting:
 
 - Asymmetric party crafting game (my team's!)
 - Rhythm-based Soulslike boss fight
@@ -69,7 +78,8 @@ I was fortunate to have the following amazing individuals on my team:
 
 all of whom were supremely talented and a pleasure to work with. Please visit
 [our group page](https://cse125.ucsd.edu/2024/cse125g1/) to see our weekly
-reports, screenshots, [demo video](https://www.youtube.com/watch?v=WR3wl0M94Zk&list=PLbbCsk7MUIGdMpwjGznoc0ooiSoYVyLtU&index=5),
+reports, screenshots,
+[demo video](https://www.youtube.com/watch?v=WR3wl0M94Zk&list=PLbbCsk7MUIGdMpwjGznoc0ooiSoYVyLtU&index=5),
 and live server (plus a showcase of Sean's outstanding web dev skills).
 
 ## Our game
@@ -135,10 +145,10 @@ years, so there is no need to install anything else to play it. A live instance
 was supposed to run on the [CSE 125 server](http://cse125.ucsd.edu:2345), but it
 currently seems to be shut down.
 
-We aimed to make the hero experience feel _frantic_ and _chaotic_—hero players
-must keep track of several different crafting recipes, throw and chase items
-around the cave, and try to avoid the minion's traps. On the other hand, the
-boss experience is one of being _sneaky,_ _powerful,_ and _in control._
+We aimed to make the hero experience feel _frantic_ and _chaotic_&mdash;hero
+players must keep track of several different crafting recipes, throw and chase
+items around the cave, and try to avoid the minion's traps. On the other hand,
+the boss experience is one of being _sneaky,_ _powerful,_ and _in control._
 
 Some of our chief inspirations for the game concept and major design elements
 included:
@@ -168,10 +178,10 @@ included:
     OpenGL. I believe one group so far has used Rust.
 - **[cannon-es](https://pmndrs.github.io/cannon-es/docs/index.html):** Physics
   engine.
-  - Using this library gave us rigid body motion basically for free, but
-    it came with many caveats that required workarounds. For example, the engine
-    only checks for collisions at an object's current location each tick, not
-    along the line segment from its previous to its current location.
+  - Using this library gave us rigid body motion basically for free, but it came
+    with many caveats that required workarounds. For example, the engine only
+    checks for collisions at an object's current location each tick, not along
+    the line segment from its previous to its current location.
   - I think that ultimately, we still saved time by using the library instead of
     rolling our own physics, but I think it would have been a cool experience to
     write a custom physics engine too.
@@ -181,7 +191,7 @@ included:
     played in browsers on any platform, and having this chance to learn about
     WebGL was the main reason I joined this group. Fortunately, I and several
     others already had experience with OpenGL, which is very similar to
-    WebGL—the latter just has a few more limitations.
+    WebGL&mdash;the latter just has a few more limitations.
   - We found the [WebGL2 Fundamentals](https://webgl2fundamentals.org) website
     to be pretty helpful. It has tutorials that walk through a large number of
     topics with plenty of examples.
@@ -191,8 +201,9 @@ included:
     type-compatible with glMatrix. Since glMatrix offered many operations
     (particularly ones relevant to graphics) that cannon-es didn't, we often had
     to convert between the two types which led to some inconsistencies.
-- **[Express](https://expressjs.com)** and **[ws](https://www.npmjs.com/package/ws):**
-  Network communication via the [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+- **[Express](https://expressjs.com)** and
+  **[ws](https://www.npmjs.com/package/ws):** Network communication via the
+  [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
   - In general, large multiplayer games often use custom protocols based on UDP
     connections to reduce bandwidth usage. Because we use a set of locally
     connected machines with high bandwidth and low latency for the final demo in
@@ -200,30 +211,33 @@ included:
     compressed/<wbr />optimized data structures for transmitting game states.
   - For our group in particular, since we were making a web game, UDP wasn't an
     option to begin with (browsers only allow TCP). We also got a lot of
-    functionality basically for free from JS/TS—for example, JSON data
+    functionality basically for free from JS/TS&mdash;for example, JSON data
     marshalling is built into the language.
-- Other APIs: **[Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)**
+- Other APIs:
+  **[Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)**
   for sounds, **HTML/CSS** for user interface.
   - As with some other parts of the stack, we got these for free because all
     modern browsers provide them.
 - Development tools: **[npm](https://www.npmjs.com)** for package management,
-  **[esbuild](https://esbuild.github.io)** for bundling (very fast), **[ESLint](https://eslint.org)**
-  for code linting, **[Prettier](https://prettier.io)** for code formatting, and
-  of course **[Git](https://git-scm.com)** for version control.
+  **[esbuild](https://esbuild.github.io)** for bundling (very fast),
+  **[ESLint](https://eslint.org)** for code linting,
+  **[Prettier](https://prettier.io)** for code formatting, and of course
+  **[Git](https://git-scm.com)** for version control.
   - The linting was pretty minimal because some members of the team didn't like
     using a linter. I basically learned JS/TS with the recommended ruleset so
     don't find it obtrusive, but we ended up turning off most rules to save time
     for others who weren't accustomed.
 - **[Blender](https://www.blender.org):** 3D modeling and texturing.
   - We exported our models as **[glTF](https://www.khronos.org/gltf/)** files to
-    make them easy to process—this format is designed to work well with WebGL
-    and OpenGL.
+    make them easy to process&mdash;this format is designed to work well with
+    WebGL and OpenGL.
 
 ## Our journey
 
 For a more in-depth chronicle of our game development journey, please see our
-project specification, weekly reports, and final review on [our group page](https://cse125.ucsd.edu/2024/cse125g1/).
-I'll summarize our weekly progress here:
+project specification, weekly reports, and final review on
+[our group page](https://cse125.ucsd.edu/2024/cse125g1/). I'll summarize our
+weekly progress here:
 
 - **Week 1:** We held a long meeting to nail down some game design elements.
 
@@ -369,8 +383,8 @@ I'll summarize our weekly progress here:
     and the game was still more of a sandbox engine than a game where each
     player has a goal and a way to win or lose.
   - I think we didn't know enough about the tools and game elements yet to
-    properly plan out our requirements early on, so having this experience
-    seems helpful for avoiding that kind of situation in the future.
+    properly plan out our requirements early on, so having this experience seems
+    helpful for avoiding that kind of situation in the future.
 
   <figure>
     <div>
@@ -450,7 +464,7 @@ I'll summarize our weekly progress here:
   system; more sound effects.
 
   - At this point, there was a way to _win,_ so we finally had a true game.
-  - The game itself had also become a _platform_—all our work on physics,
+  - The game itself had also become a _platform_&mdash;all our work on physics,
     graphics, networking, controls, game objects, etc. created foundational
     infrastructure on which we could quickly build and iterate new features and
     interactions.
@@ -495,7 +509,8 @@ I'll summarize our weekly progress here:
   features, fixes, optimizations, and quality-of-life changes; final demo!
 
   - As tends to happen in these situations, the majority of this work occurred
-    in the 24 hours before the demo ([nearly 200 of our ~700 commits!](https://github.com/ucsd-cse125-sp24/group1/commits/main/?since=2024-06-06&until=2024-06-07)).
+    in the 24 hours before the demo
+    ([nearly 200 of our ~700 commits!](https://github.com/ucsd-cse125-sp24/group1/commits/main/?since=2024-06-06&until=2024-06-07)).
     We didn't even procrastinate, having made pretty steady progress all
     quarter, but there was just that much left to do.
   - The final demo went smoothly and we got to show off most of the interesting
