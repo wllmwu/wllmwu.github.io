@@ -31,7 +31,9 @@ function Showcase({ items }: ShowcaseProps) {
           />
           <div className={styles.showcaseTextWrapper}>
             <p className={styles.showcaseTitle}>
-              <Link to={link}>{title}</Link>
+              <Link to={link} className="fancy">
+                {title}
+              </Link>
             </p>
             <p className={styles.showcaseDescription}>{description}</p>
           </div>

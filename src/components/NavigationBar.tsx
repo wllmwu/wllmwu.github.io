@@ -32,6 +32,7 @@ function NavigationBar() {
               to={link.to}
               className={classNames(
                 styles.topLink,
+                currentBase === link.to ? "fancy" : null,
                 currentBase === link.to ? styles.topLinkCurrent : null
               )}
             >

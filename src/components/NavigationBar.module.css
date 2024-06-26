@@ -22,15 +22,19 @@
 
 .homeLink {
   color: var(--text-primary-color);
+  background-image: var(--text-gradient);
+  background-clip: text;
   font-family: var(--body-typeface);
   font-weight: bold;
   white-space: nowrap;
   margin-right: 1rem;
+  transition: color var(--common-transition);
 }
 
 .homeLink:hover,
 .homeLink:focus {
   text-decoration: none;
+  color: transparent;
 }
 
 .topLinkList {
@@ -60,6 +64,9 @@
   font-family: var(--heading-typeface);
   font-weight: bold;
   color: var(--text-primary-color);
+  border-bottom: 0 solid var(--text-primary-color);
+  transition: color var(--common-transition);
+  transition: border-bottom-width var(--common-transition);
 }
 
 .topLink:hover,
@@ -69,7 +76,6 @@
 }
 
 .topLinkCurrent {
-  color: var(--accent-color);
   border-bottom: 3px solid var(--accent-color);
 }
 
