@@ -5,6 +5,7 @@
   box-sizing: content-box;
   border: 1px solid var(--line-color);
   border-radius: var(--common-border-radius);
+  box-shadow: 0 0 4px var(--shadow-color);
 }
 
 .carousel {

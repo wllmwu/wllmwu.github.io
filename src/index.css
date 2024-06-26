@@ -1,5 +1,5 @@
 :root {
-  --background-color: #fbfbfb;
+  --background-color: #fafafa;
   --surface-color: #fff;
   --text-primary-color: #000;
   --text-secondary-color: #727272;
@@ -141,6 +141,9 @@ a.fancy {
   background-color: var(--accent-color);
   background-image: var(--text-gradient);
   background-clip: text;
+  font-family: var(--heading-typeface);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 a.fancy:hover,

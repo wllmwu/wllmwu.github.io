@@ -21,6 +21,9 @@
 
 .showcaseItem {
   padding: 1rem;
+  background-color: var(--surface-color);
+  border: 0.5px solid var(--line-color);
+  box-shadow: 0 0 4px var(--shadow-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,10 +71,7 @@
 
 .showcaseTitle {
   margin: 0;
-  font-family: var(--heading-typeface);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 1.75rem;
 }
 
 .showcaseTitle a::after {
