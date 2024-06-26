@@ -37,7 +37,7 @@
 
 .showcaseItem:hover,
 .showcaseItem:focus-within {
-  background-color: var(--light-shadow-color);
+  background-color: var(--highlight-color);
 }
 
 @media (max-width: 768px) {
