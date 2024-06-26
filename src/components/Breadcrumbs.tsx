@@ -1,7 +1,7 @@
 import React from "react";
 import { UIMatch, useMatches } from "react-router-dom";
 import { RouteHandle } from "../types";
-import styles from "./Breadcrumb.module.css";
+import styles from "./Breadcrumbs.module.css";
 
 /**
  * Based on the example at https://reactrouter.com/en/main/hooks/use-matches.

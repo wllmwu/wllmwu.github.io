@@ -28,7 +28,7 @@ function AppRoot() {
       <NavigationBar />
       <main id="main-content">
         <div className={styles.page}>
-          {handle?.crumb && <Breadcrumbs />}
+          {handle?.crumb !== undefined && <Breadcrumbs />}
           <Outlet />
         </div>
       </main>

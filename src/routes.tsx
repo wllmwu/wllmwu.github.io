@@ -63,6 +63,7 @@ export const routes: RouteObject[] = [
             element: <AppsPage />,
             handle: {
               documentTitle: "Apps",
+              crumb: null,
             },
           },
           {
@@ -110,6 +111,7 @@ export const routes: RouteObject[] = [
             element: <ProjectsPage />,
             handle: {
               documentTitle: "Projects",
+              crumb: null,
             },
           },
           {
