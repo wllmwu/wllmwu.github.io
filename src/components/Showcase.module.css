@@ -33,7 +33,7 @@
 
 .showcaseItem:hover,
 .showcaseItem:focus-within {
-  background-color: var(--shadow-color);
+  background-color: var(--light-shadow-color);
 }
 
 @media (max-width: 768px) {
@@ -50,6 +50,7 @@
   height: auto;
   object-fit: cover;
   background-color: var(--accent-color);
+  background-image: var(--gradient);
 }
 
 @media (max-width: 768px) {
@@ -68,7 +69,7 @@
   margin: 0;
   font-family: var(--heading-typeface);
   font-size: 1.5rem;
-  font-weight: var(--weight-medium);
+  font-weight: bold;
   text-transform: uppercase;
 }
 

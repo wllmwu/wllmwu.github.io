@@ -30,3 +30,7 @@
   display: inline-block;
   scroll-snap-align: center;
 }
+
+.carousel .image:first-child {
+  scroll-snap-align: start;
+}

@@ -4,6 +4,6 @@
   margin-bottom: 1rem;
   font-family: var(--heading-typeface);
   font-size: 1.25rem;
-  font-weight: var(--weight-medium);
+  font-weight: bold;
   text-transform: uppercase;
 }

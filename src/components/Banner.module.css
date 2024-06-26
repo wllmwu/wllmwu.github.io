@@ -4,6 +4,7 @@
   min-height: 25rem;
   height: auto;
   background-color: var(--accent-color);
+  background-image: var(--gradient);
   display: flex;
   flex-direction: column;
   justify-content: center;

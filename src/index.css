@@ -4,28 +4,24 @@
   --text-primary-color: #000;
   --text-secondary-color: #727272;
   --text-opposite-color: #fff;
-  --accent-color: #007faf;
+  --accent-color: #0060c0;
   --line-color: #c0c0c0;
+  /* Use relative colors when support improves https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb */
   --shadow-color: #00000030;
+  --light-shadow-color: #00000020;
+
+  --gradient: linear-gradient(6deg, #0040a0, 75%, #40d0f0);
 
   --body-typeface: "Open Sans", Helvetica, Arial, sans-serif;
   --heading-typeface: "Barlow Semi Condensed", Helvetica, Arial, sans-serif;
   --code-typeface: "Noto Sans Mono", Menlo, Monaco, monospace;
-
-  --weight-light: 300;
-  --weight-normal: 400;
-  --weight-medium: 500;
-  --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
-  --weight-black: 900;
 
   --common-border-radius: 8px;
   --content-side-padding: 9rem;
 
   font-family: var(--body-typeface);
   line-height: 1.5;
-  font-weight: var(--weight-normal);
+  font-weight: normal;
 
   color-scheme: light dark;
   background-color: var(--background-color);
@@ -70,7 +66,7 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-typeface);
-  font-weight: var(--weight-bold);
+  font-weight: bold;
   margin-top: 1em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
@@ -122,7 +118,7 @@ em {
 }
 
 strong {
-  font-weight: var(--weight-bold);
+  font-weight: bold;
 }
 
 a {
@@ -182,7 +178,7 @@ pre code {
 
 figure {
   width: 100%;
-  max-width: 48rem;
+  max-width: 64rem;
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
@@ -192,7 +188,7 @@ figure {
 }
 
 figcaption {
-  width: 87.5%;
+  width: 75%;
 }
 
 figure div {
@@ -204,6 +200,12 @@ figure div {
   column-gap: 2rem;
   row-gap: 1rem;
   flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  figure div img {
+    max-width: calc(50% - 1rem);
+  }
 }
 
 ol,

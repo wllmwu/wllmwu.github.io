@@ -23,7 +23,7 @@
 .homeLink {
   color: var(--text-primary-color);
   font-family: var(--body-typeface);
-  font-weight: var(--weight-bold);
+  font-weight: bold;
   white-space: nowrap;
   margin-right: 1rem;
 }
@@ -58,7 +58,7 @@
 
 .topLink {
   font-family: var(--heading-typeface);
-  font-weight: var(--weight-medium);
+  font-weight: bold;
   color: var(--text-primary-color);
 }
 
