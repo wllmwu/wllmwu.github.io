@@ -28,3 +28,13 @@
 .backToTopBox a {
   color: var(--text-opposite-color);
 }
+
+@media print {
+  .skipLink {
+    display: none;
+  }
+
+  .backToTopBox {
+    display: none;
+  }
+}
